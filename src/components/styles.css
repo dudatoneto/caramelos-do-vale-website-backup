@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+
+body {
+  margin: 0;
+}
+
+main {
+  background-color: #eab74a;
+  padding: 7vw 10% 20vw;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cabin", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 55px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+p {
+  color: #474747;
+  font-size: 27px;
+  font-family: "Merriweather", serif;
+  margin: 5px auto;
+}
+
+section {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 0 5px;
+  font-size: 27px;
+  font-family: "Merriweather", serif;
+  background-color: #1e95b3;
+  color: white;
+  border: 10px solid #1e95b3;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button i {
+  margin-left: 5px;
+}
+
+.large-margin {
+  margin: 150px 0;
+}
+
+.small-margin {
+  margin: 85px 0;
+}
+
+main > section:first-of-type {
+  margin-top: 30px;
+}
+
+main > section:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-us,
+.description-history {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  height: auto; /* Maintains the ratio */
+  border: 1vw solid #1e95b3;
+  border-radius: 15px;
+}
+
+.image1,
+.image2 {
+  width: 50%;
+  min-width: 150px;
+  max-width: 600px;
+}
+
+.img-round {
+  width: 15%;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.image3 {
+  top: -15%;
+  left: 7%;
+}
+
+.image4 {
+  top: 53.2%;
+  left: -1%;
+}
+
+.image5 {
+  top: -20%;
+  right: 7%;
+}
+
+.image6 {
+  top: 56%;
+  right: 0;
+}
+
+.image7 {
+  width: 60%;
+}
+
+.description {
+  width: 40%;
+}
+
+.numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0 5vw;
+}
+
+.numbers p {
+  color: black;
+  font-size: 40px;
+}
+
+.numbers p:first-of-type {
+  font-size: 70px;
+}
+
+.numbers div {
+  width: 260px;
+}
+
+.title-history {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.title-history,
+.description-history p {
+  background-color: #1e95b3;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.detail {
+  width: 70%;
+  margin: 15px auto 90px auto;
+}
+
+.operation {
+  padding: 0 5vw;
+}
+
+.operation p {
+  margin-bottom: 10px;
+}
+
+.join-us div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  min-height: 250px;
+}
+
+.join-us p {
+  width: 50%;
+  margin: 5px auto;
+}
+
+.description-title {
+  color: black;
+  font-size: 30px;
+  margin: 85px auto;
+}
+
+.icon-title {
+  margin: 10px auto;
+  width: 50%;
+}
+
+.medium-width-p p {
+  width: 65%;
+}
+
+.title-end {
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
+
+/* Media query for small screens */
+@media (max-width: 1000px) {
+  h1,
+  h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  p,
+  .button {
+    font-size: 19px;
+  }
+
+  .about-us,
+  .description-history {
+    flex-direction: column;
+  }
+
+  .description {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .image3 {
+    top: 0;
+    left: 6.5%;
+  }
+
+  .image5 {
+    top: 0;
+    right: 6.5%;
+  }
+
+  .image7 {
+    width: 75%;
+  }
+}
+
+@media (max-width: 850px) {
+  .large-margin {
+    margin: 60px 0;
+  }
+
+  .image1,
+  .image2 {
+    width: 70%;
+    margin: auto;
+  }
+
+  .image3,
+  .image4,
+  .image5,
+  .image6 {
+    display: none;
+  }
+
+  .numbers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .numbers p:first-of-type {
+    font-size: 40px;
+  }
+
+  .numbers p {
+    font-size: 19px;
+  }
+
+  .numbers div {
+    margin: 20px 0;
+  }
+
+  .operation {
+    padding: 0;
+  }
+
+  .join-us p {
+    width: 100%;
+  }
+
+  .join-us div {
+    min-height: auto;
+  }
+
+  .medium-width-p p {
+    width: 100%;
+  }
+
+  .icon-title {
+    width: 100%;
+  }
+}
+
+/* Media query for large screens */
+@media (min-width: 1300px) {
+  .img-round {
+    max-width: 190px;
+  }
+
+  .join-us div {
+    min-height: 290px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .about-us,
+  .description-history {
+    justify-content: space-evenly;
+  }
+}
