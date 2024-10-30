@@ -1,56 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Caramelos do Vale</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v6.6.0/css/all.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <img
-        class="logo img-header"
-        src="../images/logo-caramelos-do-vale.png"
-        alt="Imagem do logo da Associação Caramelos do Vale"
-      />
-      <nav class="nav-desktop">
-        <a>Como Ajudar</a>
-        <a>Sobre Nós</a>
-        <a>Animais para Adoção</a>
-        <a>Loja</a>
-        <a>Eventos</a>
-        <a>Voluntariado</a>
-        <a>Contato</a>
-      </nav>
-      <div class="burger">
-        <i class="fa-solid fa-bars" id="menu-toggle"></i>
-      </div>
-    </header>
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHeart,
+  faSuitcaseMedical,
+  faHouse,
+} from "@fortawesome/free-solid-svg-icons";
 
-    <main class="menu-mobile" id="menu-mobile">
-      <nav class="nav-mobile">
-        <a>Como Ajudar</a>
-        <a>Sobre Nós</a>
-        <a>Animais para Adoção</a>
-        <a>Loja</a>
-        <a>Eventos</a>
-        <a>Voluntariado</a>
-        <a>Contato</a>
-      </nav>
-    </main>
+const AboutUs = () => {
+  return (
     <main id="main">
-      <section class="about-us large-margin">
+      <section className="about-us large-margin">
         <img
-          class="image1"
-          src="../images/about-us1.jpg"
+          className="image1"
+          src="../src/images/about-us1.jpg"
           alt="Foto da nossa voluntária Amanda com um dos cães sob cuidado do projeto"
         />
-        <div class="description">
-          <h1 class="hero-title">Sobre Nós 🐾</h1>
+        <div className="description">
+          <h1 className="hero-title">Sobre Nós 🐾</h1>
           <p>
             Caramelos do Vale é uma ONG dedicada à proteção e ao cuidado de
             animais em situação de abandono e vulnerabilidade. Fundada com o
@@ -63,38 +29,48 @@
           </p>
         </div>
       </section>
-      <section class="large-margin">
-        <div class="numbers">
+      <section className="large-margin">
+        <div className="numbers">
           <div>
-            <i class="fa-solid fa-heart fa-4x"></i>
-            <p><b>89</b></p>
+            <FontAwesomeIcon icon={faHeart} size="4x" className="icon" />
+            <p>
+              <b>89</b>
+            </p>
             <p>Adoções</p>
           </div>
           <div>
-            <i class="fa-solid fa-suitcase-medical fa-4x"></i>
-            <p><b>172</b></p>
+            <FontAwesomeIcon
+              icon={faSuitcaseMedical}
+              size="4x"
+              className="icon"
+            />
+            <p>
+              <b>172</b>
+            </p>
             <p>Resgates</p>
           </div>
           <div>
-            <i class="fa-solid fa-house fa-4x"></i>
-            <p><b>27</b></p>
+            <FontAwesomeIcon icon={faHouse} size="4x" className="icon" />
+            <p>
+              <b>27</b>
+            </p>
             <p>Animais atualmente em nossos cuidados</p>
           </div>
         </div>
-        <p class="detail">
+        <p className="detail">
           *alguns dos animais resgatados tiveram os tutores posteriormente
           localizados e não fazem parte do número de adoções
         </p>
       </section>
-      <section class="history large-margin">
-        <h2 class="title-history">Lobo & Loba: onde tudo começou</h2>
-        <div class="description-history">
+      <section className="history large-margin">
+        <h2 className="title-history">Lobo & Loba: onde tudo começou</h2>
+        <div className="description-history">
           <img
-            class="image2"
-            src="../images/about-us2.jpg"
+            className="image2"
+            src="../src/images/about-us2.jpg"
             alt="Foto dos dois cães caramelos que foram a inspiração para o início do projeto"
           />
-          <div class="description">
+          <div className="description">
             <p>
               Essa dupla foi responsável pela formação do grupo, e o nome
               "Caramelos do Vale" é em homenagem a eles. Há alguns anos, eles
@@ -107,7 +83,7 @@
           </div>
         </div>
       </section>
-      <section class="operation large-margin">
+      <section className="operation large-margin">
         <h2>Como Atuamos</h2>
         <p>
           Há mais de dois anos estamos lutando para dar um futuro melhor aos
@@ -134,7 +110,7 @@
           vitória para todos💛.
         </p>
       </section>
-      <section class="join-us large-margin">
+      <section className="join-us large-margin">
         <div>
           <h2>Junte-se a Nós</h2>
           <p>
@@ -146,90 +122,43 @@
           </p>
           <picture>
             <img
-              class="image3 img-round img-join-us"
-              src="../images/join-us1.jpg"
+              className="image3 img-round img-join-us"
+              src="../src/images/join-us1.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
           <picture>
             <img
-              class="image4 img-round img-join-us"
-              src="../images/join-us2.jpg"
+              className="image4 img-round img-join-us"
+              src="../src/images/join-us2.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
           <picture>
             <img
-              class="image5 img-round img-join-us"
-              src="../images/join-us3.jpg"
+              className="image5 img-round img-join-us"
+              src="../src/images/join-us3.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
           <picture>
             <img
-              class="image6 img-round img-join-us"
-              src="../images/join-us4.jpg"
+              className="image6 img-round img-join-us"
+              src="../src/images/join-us4.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
         </div>
         <picture>
           <img
-            class="image7"
-            src="../images/join-us5.jpg"
+            className="image7"
+            src="../src/images/join-us5.jpg"
             alt="Foto dos nossos queridos voluntários do projeto no espaço que abriga os cães do projeto"
           />
         </picture>
       </section>
     </main>
+  );
+};
 
-    <footer>
-      <div class="footer-left">
-        <img
-          class="logo img-footer"
-          src="../images/logo-caramelos-do-vale.png"
-          alt="Imagem do logo da Associação Caramelos do Vale"
-        />
-        <div>
-          <a><i class="fa-brands fa-instagram"></i></a>
-          <a><i class="fa-brands fa-tiktok"></i></a>
-        </div>
-      </div>
-      <div class="footer-right">
-        <nav class="nav-footer">
-          <a><b>Página Inicial</b></a>
-          <a>Como Ajudar</a>
-          <a>Sobre Nós</a>
-          <a>Animais para Adoção</a>
-        </nav>
-        <nav class="nav-footer">
-          <a>Loja</a>
-          <a>Eventos</a>
-          <a>Voluntariado</a>
-          <a>Contato</a>
-        </nav>
-      </div>
-    </footer>
-
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("menu-mobile");
-      const main = document.getElementById("main");
-
-      menuToggle.addEventListener("click", () => {
-        console.log(main.style.display);
-        console.log(mobileMenu.style.display);
-        mobileMenu.style.display =
-          mobileMenu.style.display === "flex" ? "none" : "flex";
-        main.style.display = main.style.display === "none" ? "block" : "none";
-      });
-
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 850) {
-          mobileMenu.style.display = "none";
-          main.style.display = "block";
-        }
-      });
-    </script>
-  </body>
-</html>
+export default AboutUs;
