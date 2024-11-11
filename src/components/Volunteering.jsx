@@ -28,14 +28,14 @@ const Volunteering = () => {
             clínica veterinária.
           </p>
           <a
-            className="button"
+            className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
             href="https://docs.google.com/forms/d/1tuDtWfqGCTWIJC2AnsDsrJr4a3y1IYpsU2MPc3zIjNQ/viewform?edit_requested=true"
           >
             Formulário para voluntários
-            <FontAwesomeIcon icon={faArrowRight} className="button-icon"/>
-            </a>
+            <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
+          </a>
         </section>
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faMugHot} size="6x" />
@@ -47,14 +47,14 @@ const Volunteering = () => {
             externos, que são um recurso muito importante para nossa causa.
           </p>
           <a
-            className="button"
+            className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
             href="https://docs.google.com/forms/d/1tuDtWfqGCTWIJC2AnsDsrJr4a3y1IYpsU2MPc3zIjNQ/viewform?edit_requested=true"
           >
             Formulário para voluntários
-            <FontAwesomeIcon icon={faArrowRight} className="button-icon"/>
-            </a>
+            <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
+          </a>
         </section>
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faMobileScreenButton} size="6x" />
@@ -64,14 +64,14 @@ const Volunteering = () => {
             nas redes.
           </p>
           <a
-            className="button"
+            className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
             href="https://docs.google.com/forms/d/1tuDtWfqGCTWIJC2AnsDsrJr4a3y1IYpsU2MPc3zIjNQ/viewform?edit_requested=true"
           >
             Formulário para voluntários
-            <FontAwesomeIcon icon={faArrowRight} className="button-icon"/>
-            </a>
+            <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
+          </a>
         </section>
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faHouse} size="6x" />
@@ -81,7 +81,7 @@ const Volunteering = () => {
             casa?
           </p>
           <a
-            className="button"
+            className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfSMe661hJb0e4IzO7U-Xp-cN7bgngpna8lLutbdKjt6onCQA/viewform"
@@ -105,7 +105,7 @@ const Volunteering = () => {
           <p>- Eventos e campanhas conjuntas;</p>
           <p>- Doação de produtos da empresa.</p>
           <a
-            className="button"
+            className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
             href="https://wa.me/5551991084114?text=Olá,%20gostaria%20de%20realizar%20uma%20parceria%20da%20minha%20empresa%20com%20a%20Associação%20Caramelos%20do%20Vale"
@@ -116,7 +116,7 @@ const Volunteering = () => {
         </section>
         <h2 className="title-end">Ficou com alguma dúvida?</h2>
         <a
-          className="button"
+          className="button-primary"
           target="_blank"
           rel="noopener noreferrer"
           href="https://wa.me/5551991084114?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida%20sobre%20a%20Associação%20Caramelos%20do%20Vale"

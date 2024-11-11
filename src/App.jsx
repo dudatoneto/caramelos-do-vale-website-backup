@@ -7,6 +7,7 @@ import AboutUs from "./components/AboutUs.jsx";
 import Volunteering from "./components/Volunteering.jsx";
 import Contact from "./components/Contact.jsx";
 import Donations from "./components/Donations.jsx";
+import ForAdoption from "./components/ForAdoption.jsx";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -17,7 +18,7 @@ const App = () => {
   };
 
   const handleResize = () => {
-    if (window.innerWidth > 850) {
+    if (window.innerWidth > 950) {
       setMobileMenu(false);
     }
   };
@@ -30,7 +31,7 @@ const App = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Run once on mount
+  }, []);
 
   return (
     <>
@@ -39,6 +40,7 @@ const App = () => {
         <>
           <Routes>
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="for-adoption" element={<ForAdoption />} />
             <Route path="/volunteering" element={<Volunteering />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/donations" element={<Donations />} />

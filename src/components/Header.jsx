@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,13 +13,27 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
           alt="Imagem do logo da Associação Caramelos do Vale"
         />
         <nav className="nav-desktop">
-          <a className="button">Como Ajudar</a>
-          <a>Sobre Nós</a>
-          <a>Animais para Adoção</a>
-          <a>Loja</a>
-          <a>Eventos</a>
-          <a>Voluntariado</a>
-          <a>Contato</a>
+          <Link to="/donations" className="link nav-desktop-link button-primary">
+            Como Ajudar
+          </Link>
+          <Link to="/about-us" className="link nav-desktop-link">
+            Sobre Nós
+          </Link>
+          <Link to="/for-adoption" className="link nav-desktop-link">
+            Animais para Adoção
+          </Link>
+          <Link to="/shop" className="link nav-desktop-link">
+            Loja
+          </Link>
+          <Link to="/events" className="link nav-desktop-link">
+            Eventos
+          </Link>
+          <Link to="/volunteering" className="link nav-desktop-link">
+            Volunteering
+          </Link>
+          <Link to="/contact" className="link nav-desktop-link">
+            Contato
+          </Link>
         </nav>
         <div className="burger">
           {!mobileMenu ? (
@@ -40,13 +55,55 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
       {mobileMenu && (
         <main className="menu-mobile">
           <nav className="nav-mobile">
-            <a>Como Ajudar</a>
-            <a>Sobre Nós</a>
-            <a>Animais para Adoção</a>
-            <a>Loja</a>
-            <a>Eventos</a>
-            <a>Voluntariado</a>
-            <a>Contato</a>
+            <Link
+              to="/donations"
+              className="link nav-mobile-link button-primary"
+              onClick={menuToggleHandler}
+            >
+              Como Ajudar
+            </Link>
+            <Link
+              to="/about-us"
+              className="link nav-mobile-link"
+              onClick={menuToggleHandler}
+            >
+              Sobre Nós
+            </Link>
+            <Link
+              to="/for-adoption"
+              className="link nav-mobile-link"
+              onClick={menuToggleHandler}
+            >
+              Animais para Adoção
+            </Link>
+            <Link
+              to="/shop"
+              className="link nav-mobile-link"
+              onClick={menuToggleHandler}
+            >
+              Loja
+            </Link>
+            <Link
+              to="/events"
+              className="link nav-mobile-link"
+              onClick={menuToggleHandler}
+            >
+              Eventos
+            </Link>
+            <Link
+              to="/volunteering"
+              className="link nav-mobile-link"
+              onClick={menuToggleHandler}
+            >
+              Volunteering
+            </Link>
+            <Link
+              to="/contact"
+              className="link nav-mobile-link"
+              onClick={menuToggleHandler}
+            >
+              Contato
+            </Link>
           </nav>
         </main>
       )}

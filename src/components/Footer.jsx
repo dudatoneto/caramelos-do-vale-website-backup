@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 
@@ -22,18 +23,34 @@ const Footer = () => {
       </div>
       <div className="footer-right">
         <nav className="nav-footer">
-          <a>
-            <b>Página Inicial</b>
-          </a>
-          <a>Como Ajudar</a>
-          <a>Sobre Nós</a>
-          <a>Animais para Adoção</a>
+          <b>
+            <Link to="/" className="link nav-footer-link">
+              Página Inicial
+            </Link>
+          </b>
+          <Link to="/donations" className="link nav-footer-link">
+            Como Ajudar
+          </Link>
+          <Link to="/about-us" className="link nav-footer-link">
+            Sobre Nós
+          </Link>
+          <Link to="/for-adoption" className="link nav-footer-link">
+            Animais para Adoção
+          </Link>
         </nav>
         <nav className="nav-footer">
-          <a>Loja</a>
-          <a>Eventos</a>
-          <a>Voluntariado</a>
-          <a>Contato</a>
+          <Link to="/shop" className="link nav-footer-link">
+            Loja
+          </Link>
+          <Link to="/events" className="link nav-footer-link">
+            Eventos
+          </Link>
+          <Link to="/volunteering" className="link nav-footer-link">
+            Volunteering
+          </Link>
+          <Link to="/contact" className="link nav-footer-link">
+            Contato
+          </Link>
         </nav>
       </div>
     </footer>

@@ -12,7 +12,7 @@ const Contact = () => {
           <FontAwesomeIcon icon={faWhatsapp} size="6x" />
           <br />
           <a
-            className="button xsmall-margin"
+            className="button-primary xsmall-margin"
             target="_blank"
             rel="noopener noreferrer"
             href="https://wa.me/5551991084114?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida%20sobre%20a%20Associação%20Caramelos%20do%20Vale"
@@ -25,7 +25,7 @@ const Contact = () => {
           <FontAwesomeIcon icon={faInstagram} size="6x" />
           <br />
           <a
-            className="button xsmall-margin"
+            className="button-primary xsmall-margin"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.instagram.com/direct/t/caramelosdovale"
