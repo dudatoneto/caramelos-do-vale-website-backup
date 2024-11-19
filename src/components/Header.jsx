@@ -13,7 +13,10 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
           alt="Imagem do logo da Associação Caramelos do Vale"
         />
         <nav className="nav-desktop">
-          <Link to="/donations" className="link nav-desktop-link button-primary">
+          <Link
+            to="/donations"
+            className="link nav-desktop-link button-primary"
+          >
             Como Ajudar
           </Link>
           <Link to="/about-us" className="link nav-desktop-link">
@@ -29,7 +32,7 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
             Eventos
           </Link>
           <Link to="/volunteering" className="link nav-desktop-link">
-            Volunteering
+            Voluntariado
           </Link>
           <Link to="/contact" className="link nav-desktop-link">
             Contato
@@ -95,7 +98,7 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
               className="link nav-mobile-link"
               onClick={menuToggleHandler}
             >
-              Volunteering
+              Voluntariado
             </Link>
             <Link
               to="/contact"

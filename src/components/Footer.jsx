@@ -46,7 +46,7 @@ const Footer = () => {
             Eventos
           </Link>
           <Link to="/volunteering" className="link nav-footer-link">
-            Volunteering
+            Voluntariado
           </Link>
           <Link to="/contact" className="link nav-footer-link">
             Contato
