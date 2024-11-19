@@ -34,7 +34,7 @@ footer {
 
 main {
   background-color: var(--primary-color);
-  padding: 7vw 10% 15vw;
+  padding: 5vw 10% 15vw;
 }
 
 h1,
@@ -150,7 +150,9 @@ main > section:last-of-type {
   text-decoration: none;
 }
 
-.icon {
+.icon,
+.general-info > p,
+.pet-description > p {
   color: var(--primary-text-color);
 }
 
@@ -291,6 +293,10 @@ img {
   color: white;
   border-radius: 15px;
   padding: 10px;
+}
+
+.description-history p {
+  border: 1vw solid var(--secondary-color);
 }
 
 .detail {
@@ -504,17 +510,18 @@ input[type="checkbox"]:checked + .checkbox::after {
 }
 
 .pet-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 
 .card {
   background-color: var(--secondary-color);
-  width: 25%;
+  width: 80%;
   border-radius: 15px;
   margin: 0 10px 5% 10px;
   padding: 10px 15px 10px 15px;
+  max-width: 500px;
 }
 
 .card img {
@@ -530,6 +537,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 .pagination {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .pet-pages {
@@ -579,15 +587,67 @@ input[type="checkbox"]:checked + .checkbox::after {
   width: 45%;
 }
 
+.pet-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.general-info {
+  text-align: start;
+  width: 40%;
+  max-width: 550px;
+}
+
+.icon-pet-info {
+  margin-right: 7px;
+}
+
+.button-pet-info {
+  margin: 3px 3px;
+}
+
+.pet-description {
+  width: 55%;
+  text-align: start;
+  min-width: 340px;
+}
+
+.pet-img {
+  width: 30%;
+  max-width: 500px;
+  margin: 20px auto 10px auto;
+}
+
+.pet-photos-display {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pet-photos {
+  margin: 1%;
+  width: 45%;
+  object-fit: cover;
+  max-height: 1000px;
+}
+
+.loading p {
+  color: var(--primary-text-color);
+  text-align: center;
+  height: 75vh;
+  margin-top: 5vh;
+}
+
+.pet-photos-display p {
+  margin-top: 5vw;
+}
+
 /* Media query for small screens */
 @media (max-width: 1350px) {
   .pet-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .card {
-    width: 37%;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -614,6 +674,10 @@ input[type="checkbox"]:checked + .checkbox::after {
   .donation-icon {
     margin-top: 10px;
     font-size: 6em;
+  }
+
+  .pet-info {
+    justify-content: space-between;
   }
 }
 
@@ -686,6 +750,10 @@ input[type="checkbox"]:checked + .checkbox::after {
     width: 2.5px;
     height: 7.5px;
     border-width: 0 2px 2px 0;
+  }
+
+  .pet-photos-display p {
+    margin-bottom: 20vw;
   }
 }
 
@@ -810,6 +878,34 @@ input[type="checkbox"]:checked + .checkbox::after {
   }
 }
 
+@media (max-width: 750px) {
+  .pet-info {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  .general-info,
+  .pet-description {
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    min-width: auto;
+  }
+
+  .general-info > * {
+    margin: 15px auto;
+  }
+
+  .pet-img {
+    width: 45%;
+  }
+
+  .pet-photos {
+    width: 75%;
+    margin: 2%;
+  }
+}
+
 @media (max-width: 600px) {
   footer,
   .footer-right {
@@ -846,10 +942,11 @@ input[type="checkbox"]:checked + .checkbox::after {
 
 @media (max-width: 550px) {
   .pet-cards {
-    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
   }
+
   .card {
-    width: 80%;
+    width: 85%;
   }
 
   .button-inactive,
@@ -878,6 +975,10 @@ input[type="checkbox"]:checked + .checkbox::after {
   .title-adoption {
     font-size: 35px;
   }
+
+  .pet-img {
+    width: 60%;
+  }
 }
 
 @media (max-width: 360px) {
@@ -904,5 +1005,11 @@ input[type="checkbox"]:checked + .checkbox::after {
 
   .contact-img2 {
     left: 8%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .pet-photos {
+    width: 30%;
   }
 }

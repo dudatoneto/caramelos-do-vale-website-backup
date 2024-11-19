@@ -16,7 +16,7 @@ const AboutUs = () => {
           alt="Foto da nossa voluntária Amanda com um dos cães sob cuidado do projeto"
         />
         <div className="description">
-          <h1 className="hero-title">Sobre Nós 🐾</h1>
+          <h1>Sobre Nós 🐾</h1>
           <p>
             Caramelos do Vale é uma ONG dedicada à proteção e ao cuidado de
             animais em situação de abandono e vulnerabilidade. Fundada com o

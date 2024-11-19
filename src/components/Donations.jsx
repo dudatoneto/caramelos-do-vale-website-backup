@@ -180,7 +180,7 @@ const Donations = () => {
           </p>
         </div>
         <Link to="/events" className="link button-primary">
-          Confira nossa página de eventos{" "}
+          Confira nossa página de eventos
           <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
         </Link>
       </section>

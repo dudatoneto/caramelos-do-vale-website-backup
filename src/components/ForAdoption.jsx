@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { Link, useActionData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -61,6 +61,14 @@ const petInfoParsing = (petInfo) => {
   petInfo.vaccinated
     ? (petInfo.vaccinated = "sim")
     : (petInfo.vaccinated = "não");
+
+  petInfo.description = petInfo.description.split("\n").map((line, index) => (
+    <span key={index}>
+      {line}
+      <br />
+      <br />
+    </span>
+  ));
 
   return petInfo;
 };
@@ -184,6 +192,9 @@ const ForAdoption = () => {
 
       setCurrentPets(filteredPets.slice(indexOfFirstItem, indexOfLastItem));
       setPetsArrayReady(true);
+    } else {
+      setTotalPages(0);
+      setCurrentPets([]);
     }
   }, [filteredPets, currentPage, petsPerPage]);
 
@@ -217,7 +228,11 @@ const ForAdoption = () => {
   }, []);
 
   if (!petsArrayReady) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading">
+        <p>Carregando...</p>
+      </div>
+    );
   }
 
   return (
@@ -231,15 +246,17 @@ const ForAdoption = () => {
           handleFilterStateChange={handleFilterStateChange}
         />
         <section className="pet-pages">
-          <div className="pet-cards">
-            {currentPets.length ? (
-              currentPets.map((pet) => (
+          {currentPets.length ? (
+            <div className="pet-cards">
+              {currentPets.map((pet) => (
                 <PetCard key={pet.pet_id} petInfo={pet} />
-              ))
-            ) : (
-              <p>Não há animais disponíveis com os filtros selecionados.</p>
-            )}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="no-pets">
+              Não há animais disponíveis com os filtros selecionados.
+            </p>
+          )}
           <Pagination
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
@@ -270,7 +287,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="p-desktop"
               name="size"
-              checked={filterState.size.p}
+              checked={filterState.size.P}
               onChange={() => handleFilterStateChange("size", "P")}
             />
             <span className="checkbox"></span>P (até 10kg)
@@ -280,7 +297,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="m-desktop"
               name="size"
-              checked={filterState.size.m}
+              checked={filterState.size.M}
               onChange={() => handleFilterStateChange("size", "M")}
             />
             <span className="checkbox"></span>M (até 25kg)
@@ -290,7 +307,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="g-desktop"
               name="size"
-              checked={filterState.size.g}
+              checked={filterState.size.G}
               onChange={() => handleFilterStateChange("size", "G")}
             />
             <span className="checkbox"></span>G (mais de 25kg)
@@ -305,7 +322,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="female-desktop"
               name="gender"
-              checked={filterState.gender.f}
+              checked={filterState.gender.Fêmea}
               onChange={() => handleFilterStateChange("gender", "Fêmea")}
             />
             <span className="checkbox"></span>Fêmea
@@ -315,7 +332,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="male-desktop"
               name="gender"
-              checked={filterState.gender.m}
+              checked={filterState.gender.Macho}
               onChange={() => handleFilterStateChange("gender", "Macho")}
             />
             <span className="checkbox"></span>Macho
@@ -330,7 +347,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="puppy-desktop"
               name="age"
-              checked={filterState.age.puppy}
+              checked={filterState.age.Filhote}
               onChange={() => handleFilterStateChange("age", "Filhote")}
             />
             <span className="checkbox"></span>Menos de 1 ano
@@ -340,7 +357,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="young-desktop"
               name="age"
-              checked={filterState.age.young}
+              checked={filterState.age.Jovem}
               onChange={() => handleFilterStateChange("age", "Jovem")}
             />
             <span className="checkbox"></span>De 1 a 5 anos
@@ -350,7 +367,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="adult-desktop"
               name="age"
-              checked={filterState.age.adult}
+              checked={filterState.age.Adulto}
               onChange={() => handleFilterStateChange("age", "Adulto")}
             />
             <span className="checkbox"></span>De 5 a 10 anos
@@ -360,7 +377,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="senior-desktop"
               name="age"
-              checked={filterState.age.senior}
+              checked={filterState.age.Sênior}
               onChange={() => handleFilterStateChange("age", "Sênior")}
             />
             <span className="checkbox"></span>Mais de 10 anos
@@ -375,7 +392,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="yes_sponsorship-desktop"
               name="sponsorship"
-              checked={filterState.sponsorship.yes}
+              checked={filterState.sponsorship.sim}
               onChange={() => handleFilterStateChange("sponsorship", "sim")}
             />
             <span className="checkbox"></span>Sim
@@ -385,7 +402,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="no_sponsorship-desktop"
               name="sponsorship"
-              checked={filterState.sponsorship.no}
+              checked={filterState.sponsorship.não}
               onChange={() => handleFilterStateChange("sponsorship", "não")}
             />
             <span className="checkbox"></span>Não
@@ -400,7 +417,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="yes_hosting-desktop"
               name="hosting"
-              checked={filterState.hosting.yes}
+              checked={filterState.hosting.sim}
               onChange={() => handleFilterStateChange("hosting", "sim")}
             />
             <span className="checkbox"></span>Sim
@@ -410,7 +427,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               type="checkbox"
               id="no_hosting-desktop"
               name="hosting"
-              checked={filterState.hosting.no}
+              checked={filterState.hosting.não}
               onChange={() => handleFilterStateChange("hosting", "não")}
             />
             <span className="checkbox"></span>Não
@@ -447,7 +464,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="p-mobile"
                       name="size"
-                      checked={filterState.size.p}
+                      checked={filterState.size.P}
                       onChange={() => handleFilterStateChange("size", "P")}
                     />
                     <span className="checkbox"></span>P (até 10kg)
@@ -457,7 +474,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="m-mobile"
                       name="size"
-                      checked={filterState.size.m}
+                      checked={filterState.size.M}
                       onChange={() => handleFilterStateChange("size", "M")}
                     />
                     <span className="checkbox"></span>M (até 25kg)
@@ -467,7 +484,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="g-mobile"
                       name="size"
-                      checked={filterState.size.g}
+                      checked={filterState.size.G}
                       onChange={() => handleFilterStateChange("size", "G")}
                     />
                     <span className="checkbox"></span>G (mais de 25kg)
@@ -482,7 +499,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="female-mobile"
                       name="gender"
-                      checked={filterState.gender.f}
+                      checked={filterState.gender.Fêmea}
                       onChange={() =>
                         handleFilterStateChange("gender", "Fêmea")
                       }
@@ -494,7 +511,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="male-mobile"
                       name="gender"
-                      checked={filterState.gender.m}
+                      checked={filterState.gender.Macho}
                       onChange={() =>
                         handleFilterStateChange("gender", "Macho")
                       }
@@ -511,7 +528,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="puppy-mobile"
                       name="age"
-                      checked={filterState.age.puppy}
+                      checked={filterState.age.Filhote}
                       onChange={() => handleFilterStateChange("age", "Filhote")}
                     />
                     <span className="checkbox"></span>Menos de 1 ano
@@ -521,7 +538,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="young-mobile"
                       name="age"
-                      checked={filterState.age.young}
+                      checked={filterState.age.Jovem}
                       onChange={() => handleFilterStateChange("age", "Jovem")}
                     />
                     <span className="checkbox"></span>De 1 a 5 anos
@@ -531,7 +548,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="adult-mobile"
                       name="age"
-                      checked={filterState.age.adult}
+                      checked={filterState.age.Adulto}
                       onChange={() => handleFilterStateChange("age", "Adulto")}
                     />
                     <span className="checkbox"></span>De 5 a 10 anos
@@ -541,7 +558,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="senior-mobile"
                       name="age"
-                      checked={filterState.age.senior}
+                      checked={filterState.age.Sênior}
                       onChange={() => handleFilterStateChange("age", "Sênior")}
                     />
                     <span className="checkbox"></span>Mais de 10 anos
@@ -558,7 +575,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="yes_sponsorship-mobile"
                       name="sponsorship"
-                      checked={filterState.sponsorship.yes}
+                      checked={filterState.sponsorship.sim}
                       onChange={() =>
                         handleFilterStateChange("sponsorship", "sim")
                       }
@@ -570,7 +587,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="no_sponsorship-mobile"
                       name="sponsorship"
-                      checked={filterState.sponsorship.no}
+                      checked={filterState.sponsorship.não}
                       onChange={() =>
                         handleFilterStateChange("sponsorship", "não")
                       }
@@ -587,7 +604,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="yes_hosting-mobile"
                       name="hosting"
-                      checked={filterState.hosting.yes}
+                      checked={filterState.hosting.sim}
                       onChange={() => handleFilterStateChange("hosting", "sim")}
                     />
                     <span className="checkbox"></span>Sim
@@ -597,7 +614,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
                       type="checkbox"
                       id="no_hosting-mobile"
                       name="hosting"
-                      checked={filterState.hosting.no}
+                      checked={filterState.hosting.não}
                       onChange={() => handleFilterStateChange("hosting", "não")}
                     />
                     <span className="checkbox"></span>Não
@@ -622,7 +639,7 @@ const PetCard = ({ petInfo }) => {
       <p>{petInfo.gender}</p>
       <p>Porte {petInfo.size}</p>
       <p>{petInfo.age}</p>
-      <Link to="/" className="link button-secondary">
+      <Link to={`/for-adoption/${petInfo.pet_id}`} className="link button-secondary">
         Vem me conhecer
         <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
       </Link>
@@ -771,7 +788,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
       {pagination}
       <button
         onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-        disabled={currentPage === totalPages}
+        disabled={currentPage === totalPages || totalPages === 0}
       >
         Próximo
         <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
@@ -781,3 +798,4 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
 };
 
 export default ForAdoption;
+export { petInfoParsing };
