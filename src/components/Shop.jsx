@@ -136,10 +136,13 @@ const Shop = () => {
 
   return (
     <main>
-      <h1 className="title title-adoption">Lojinha dos Caramelos</h1>
-      <p className="description-title">
-        Verifique os tamanhos de camisetas disponíveis através do nosso WhatsApp
-      </p>
+      <section>
+        <h1 className="title title-adoption">Lojinha dos Caramelos</h1>
+        <p className="description-title">
+          Verifique os tamanhos de camisetas disponíveis através do nosso
+          WhatsApp
+        </p>
+      </section>
       <section id="show-pets-adoption" className="show-pets-adoption">
         <Filter
           filterState={filterState}
