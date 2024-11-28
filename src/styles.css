@@ -514,13 +514,13 @@ input[type="checkbox"]:checked + .checkbox::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  gap: 20px 10px;
 }
 
 .card {
   background-color: var(--secondary-color);
   width: 80%;
   border-radius: 15px;
-  margin: 0 10px 5% 10px;
   padding: 10px 15px 10px 15px;
   max-width: 500px;
 }
@@ -590,6 +590,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 
 .pet-info {
   margin-top: 20px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -620,20 +621,20 @@ input[type="checkbox"]:checked + .checkbox::after {
   margin: 20px auto 10px auto;
 }
 
-.pet-photos-display {
+/* .pet-photos-display {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
-}
+} */
 
 .pet-photos {
-  margin: 1%;
-  width: 45%;
-  object-fit: cover;
   max-height: 450px;
   object-position: center;
+  min-width: 0;
+  height: 90%;
+  object-fit: cover;
+  max-width: 90%;
 }
 
 .loading p {
@@ -643,9 +644,9 @@ input[type="checkbox"]:checked + .checkbox::after {
   margin-top: 5vh;
 }
 
-.pet-photos-display p {
+/* .pet-photos-display p {
   margin-top: 5vw;
-}
+} */
 
 .product-card {
   display: flex;
@@ -768,9 +769,9 @@ input[type="checkbox"]:checked + .checkbox::after {
     border-width: 0 2px 2px 0;
   }
 
-  .pet-photos-display p {
+  /* .pet-photos-display p {
     margin-bottom: 20vw;
-  }
+  } */
 }
 
 @media (max-width: 950px) {
@@ -916,10 +917,6 @@ input[type="checkbox"]:checked + .checkbox::after {
     width: 45%;
   }
 
-  .pet-photos {
-    width: 75%;
-    margin: 2%;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1022,11 +1019,5 @@ input[type="checkbox"]:checked + .checkbox::after {
 
   .contact-img2 {
     left: 8%;
-  }
-}
-
-@media (min-width: 1600px) {
-  .pet-photos {
-    width: 30%;
   }
 }

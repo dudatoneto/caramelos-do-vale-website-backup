@@ -158,7 +158,9 @@ const PetDetails = () => {
               className="button-primary button-pet-info"
               target="_blank"
               rel="noopener noreferrer"
-              href={`https://wa.me/${PHONE_NUMBER}?text=Olá,%20tenho%20interesse%20em%20adotar%20${petInfo.gender === "Fêmea" ? "a" : "o"}%20${petInfo.name}`}
+              href={`https://wa.me/${PHONE_NUMBER}?text=Olá,%20tenho%20interesse%20em%20adotar%20${
+                petInfo.gender === "Fêmea" ? "a" : "o"
+              }%20${petInfo.name}`}
             >
               Mandar mensagem
               <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
@@ -175,10 +177,10 @@ const PetDetails = () => {
           </div>
         </div>
       </section>
-      <section className="pet-photos-display">
+      <section className="pet-cards">
         {petImages.length ? (
           petImages.map((img) => (
-            <img key={img.id} src={img.link} className="pet-photos" />
+              <img key={img.id} src={img.link} className="pet-photos" />
           ))
         ) : (
           <p>Não há fotos disponíveis para exibir.</p>
