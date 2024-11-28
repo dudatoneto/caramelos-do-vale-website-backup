@@ -221,6 +221,7 @@ img {
 
 .image7 {
   width: 60%;
+  max-width: 1500px;
 }
 
 .image8 {
@@ -624,13 +625,15 @@ input[type="checkbox"]:checked + .checkbox::after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
 }
 
 .pet-photos {
   margin: 1%;
   width: 45%;
   object-fit: cover;
-  max-height: 1000px;
+  max-height: 450px;
+  object-position: center;
 }
 
 .loading p {
@@ -642,6 +645,19 @@ input[type="checkbox"]:checked + .checkbox::after {
 
 .pet-photos-display p {
   margin-top: 5vw;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card > .button-secondary {
+  margin-top: auto;
+}
+
+.product-card > div {
+  margin-bottom: 10px;
 }
 
 /* Media query for small screens */
@@ -785,7 +801,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 
   .image1,
   .image2 {
-    width: 50%;
+    width: 65%;
     margin: auto;
   }
 
@@ -986,6 +1002,7 @@ input[type="checkbox"]:checked + .checkbox::after {
     font-size: 19px;
   }
 }
+
 /* Media query for large screens */
 @media (min-width: 1300px) {
   .join-us div {

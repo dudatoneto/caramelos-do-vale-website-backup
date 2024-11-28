@@ -9,6 +9,7 @@ import Contact from "./components/Contact.jsx";
 import Donations from "./components/Donations.jsx";
 import ForAdoption from "./components/ForAdoption.jsx";
 import PetDetails from "./components/PetDetails.jsx";
+import Shop from "./components/Shop.jsx";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -46,6 +47,7 @@ const App = () => {
             <Route path="/volunteering" element={<Volunteering />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/donations" element={<Donations />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
           <Footer />
         </>
