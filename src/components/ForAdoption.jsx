@@ -17,7 +17,8 @@ const fetchPetsInfo = async () => {
 
   const { data, error } = await supabaseConnection
     .from("pets_info")
-    .select("*");
+    .select("*")
+    .eq("adopted", false);
 
   if (error) {
     console.error("Error fetching from pets_info table", error);
@@ -639,7 +640,10 @@ const PetCard = ({ petInfo }) => {
       <p>{petInfo.gender}</p>
       <p>Porte {petInfo.size}</p>
       <p>{petInfo.age}</p>
-      <Link to={`/for-adoption/${petInfo.pet_id}`} className="link button-secondary">
+      <Link
+        to={`/for-adoption/${petInfo.pet_id}`}
+        className="link button-secondary"
+      >
         Vem me conhecer
         <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
       </Link>
@@ -655,15 +659,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
     setCurrentPage(page);
   };
 
-  useEffect(() => {
-    const targetElement = document.getElementById("show-pets-adoption");
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [currentPage]);
+
 
   // show all pages if total pages are less than maxPagesToShow
   if (totalPages <= maxPagesToShow) {

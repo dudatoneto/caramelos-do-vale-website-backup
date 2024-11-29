@@ -41,7 +41,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--primary-text-color);
+  color: inherit;
   font-family: "Cabin", sans-serif;
   margin: 0;
 }
@@ -164,6 +164,10 @@ main > section:last-of-type {
   margin-right: 7px;
 }
 
+.xlarge-margin {
+  margin: 200px 0;
+}
+
 .large-margin {
   margin: 150px 0;
 }
@@ -176,6 +180,10 @@ main > section:last-of-type {
   margin: 30px 0;
 }
 
+.xxsmall-margin {
+  margin: 10px 0;
+}
+
 img {
   height: auto; /* Maintains the ratio */
   border: 8px solid var(--secondary-color);
@@ -183,7 +191,8 @@ img {
 }
 
 .image1,
-.image2 {
+.image2,
+.home-about-us-img {
   width: 50%;
   min-width: 150px;
   max-width: 600px;
@@ -252,9 +261,9 @@ img {
 }
 
 .about-us,
-.description-history {
+.description-history,
+.home-about-us {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -264,7 +273,8 @@ img {
   width: 40%;
 }
 
-.numbers {
+.numbers,
+.help-types {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -523,6 +533,8 @@ input[type="checkbox"]:checked + .checkbox::after {
   border-radius: 15px;
   padding: 10px 15px 10px 15px;
   max-width: 500px;
+  color: white;
+  max-width: 500px;
 }
 
 .card img {
@@ -661,6 +673,28 @@ input[type="checkbox"]:checked + .checkbox::after {
   margin-bottom: 10px;
 }
 
+.home-main-img {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+.home-about-us-img {
+  width: 45%;
+}
+
+.description-2 {
+  width: 45%;
+}
+
+.home-pets-number {
+  color: black;
+}
+
+.help-types p {
+  margin-top: 20px;
+}
+
 /* Media query for small screens */
 @media (max-width: 1350px) {
   .pet-cards {
@@ -726,11 +760,13 @@ input[type="checkbox"]:checked + .checkbox::after {
   }
 
   .about-us,
-  .description-history {
+  .description-history,
+  .home-about-us {
     flex-direction: column;
   }
 
-  .description {
+  .description,
+  .description-2 {
     width: 100%;
     margin-top: 25px;
   }
@@ -800,9 +836,22 @@ input[type="checkbox"]:checked + .checkbox::after {
     margin: 60px 0;
   }
 
+  .xlarge-margin {
+    margin: 100px 0;
+  }
+
+  .small-margin {
+    margin: 25px 0;
+  }
+
+  .xsmall-margin {
+    margin: 15px 0;
+  }
+
   .image1,
-  .image2 {
-    width: 65%;
+  .image2,
+  .home-about-us-img {
+    width: 70%;
     margin: auto;
   }
 
@@ -896,7 +945,8 @@ input[type="checkbox"]:checked + .checkbox::after {
 }
 
 @media (max-width: 750px) {
-  .pet-info {
+  .pet-info,
+  .help-types {
     margin-top: 0;
     flex-direction: column;
   }
@@ -917,6 +967,9 @@ input[type="checkbox"]:checked + .checkbox::after {
     width: 45%;
   }
 
+  .help-types div {
+    margin-bottom: 25px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -960,6 +1013,10 @@ input[type="checkbox"]:checked + .checkbox::after {
 
   .card {
     width: 85%;
+  }
+
+  .home .card {
+    width: 70%;
   }
 
   .button-inactive,
@@ -1009,7 +1066,8 @@ input[type="checkbox"]:checked + .checkbox::after {
 
 @media (min-width: 1500px) {
   .about-us,
-  .description-history {
+  .description-history,
+  .home-about-us {
     justify-content: space-evenly;
   }
 

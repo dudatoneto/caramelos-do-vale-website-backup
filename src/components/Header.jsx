@@ -7,11 +7,13 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
   return (
     <>
       <header>
-        <img
-          className="logo img-header"
-          src="../src/images/logo-caramelos-do-vale.png"
-          alt="Imagem do logo da Associação Caramelos do Vale"
-        />
+        <Link to="/">
+          <img
+            className="logo img-header"
+            src="../src/images/logo-caramelos-do-vale.png"
+            alt="Imagem do logo da Associação Caramelos do Vale"
+          />
+        </Link>
         <nav className="nav-desktop">
           <Link
             to="/donations"

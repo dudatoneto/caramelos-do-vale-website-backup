@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./styles.css";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
@@ -10,9 +11,11 @@ import Donations from "./components/Donations.jsx";
 import ForAdoption from "./components/ForAdoption.jsx";
 import PetDetails from "./components/PetDetails.jsx";
 import Shop from "./components/Shop.jsx";
+import Home from "./components/Home.jsx";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const location = useLocation(); // Track location changes
 
   // Toggle mobile menu on click
   const handleMenuToggle = () => {
@@ -35,12 +38,23 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const targetElement = document.getElementById("root");
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [location]);
+
   return (
     <>
       <Header menuToggleHandler={handleMenuToggle} mobileMenu={mobileMenu} />
       {!mobileMenu && (
         <>
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="for-adoption" element={<ForAdoption />} />
             <Route path="/for-adoption/:id" element={<PetDetails />} />
