@@ -29,7 +29,7 @@ footer {
 .nav-desktop {
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 main {
@@ -143,7 +143,7 @@ main > section:last-of-type {
 
 .nav-desktop-link {
   font-size: 20px;
-  margin-right: 30px;
+  margin-right: 25px;
 }
 
 .link {
@@ -398,8 +398,9 @@ img {
 }
 
 .img-header {
-  width: 15vw;
-  margin: 10px 20px;
+  width: 20vw;
+  margin: 0.5vw 0 0.3vw 1vw;
+  max-width: 250px;
 }
 
 .burger {
@@ -695,10 +696,61 @@ input[type="checkbox"]:checked + .checkbox::after {
   margin-top: 20px;
 }
 
+.event-card {
+  display: flex;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 15px 25px;
+  margin-bottom: 4vw;
+  border-radius: 15px;
+}
+
+.event-card p {
+  text-align: start;
+  color: white;
+  margin: 15px 0;
+}
+
+.event-information {
+  display: flex;
+  flex-direction: column;
+  max-width: 2000px;
+  height: auto;
+}
+
+.event-information .button-secondary {
+  margin-top: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.img-event {
+  width: 45%;
+  margin-right: 50px;
+  object-fit: contain;
+  max-width: 680px;
+}
+
 /* Media query for small screens */
 @media (max-width: 1350px) {
   .pet-cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .event-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-event {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .events {
+    display: flex;
+    flex-direction: column;
   }
 }
 

@@ -12,6 +12,7 @@ import ForAdoption from "./components/ForAdoption.jsx";
 import PetDetails from "./components/PetDetails.jsx";
 import Shop from "./components/Shop.jsx";
 import Home from "./components/Home.jsx";
+import Events from "./components/Events.jsx";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -55,13 +56,14 @@ const App = () => {
         <>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/donations" element={<Donations />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="for-adoption" element={<ForAdoption />} />
             <Route path="/for-adoption/:id" element={<PetDetails />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/events" element={<Events />} />
             <Route path="/volunteering" element={<Volunteering />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/donations" element={<Donations />} />
-            <Route path="/shop" element={<Shop />} />
           </Routes>
           <Footer />
         </>

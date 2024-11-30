@@ -249,14 +249,12 @@ const ForAdoption = () => {
         <section className="pet-pages">
           {currentPets.length ? (
             <div className="pet-cards">
-              {currentPets.map((pet) => (
-                <PetCard key={pet.pet_id} petInfo={pet} />
-              ))}
+              {currentPets.map((pet) => {
+                return <PetCard key={pet.pet_id} petInfo={pet} />;
+              })}
             </div>
           ) : (
-            <p className="no-pets">
-              Não há animais disponíveis com os filtros selecionados.
-            </p>
+            <p>Não há animais disponíveis com os filtros selecionados.</p>
           )}
           <Pagination
             currentPage={currentPage}
@@ -659,7 +657,15 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
     setCurrentPage(page);
   };
 
-
+  useEffect(() => {
+    const targetElement = document.getElementById("show-pets-adoption");
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [currentPage]);
 
   // show all pages if total pages are less than maxPagesToShow
   if (totalPages <= maxPagesToShow) {
