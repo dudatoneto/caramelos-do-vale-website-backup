@@ -30,6 +30,9 @@ const fetchPetsInfo = async () => {
 };
 
 const petInfoParsing = (petInfo) => {
+  // Skip parsing if already parsed
+  if (petInfo.isParsed) return;
+
   petInfo.name = petInfo.pet_name;
   delete petInfo.pet_name;
 
@@ -70,6 +73,8 @@ const petInfoParsing = (petInfo) => {
       <br />
     </span>
   ));
+
+  petInfo.isParsed = true; // Mark as parsed
 
   return petInfo;
 };
@@ -654,10 +659,6 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   let pagination = [];
 
   const goToPage = (page) => {
-    setCurrentPage(page);
-  };
-
-  useEffect(() => {
     const targetElement = document.getElementById("show-pets-adoption");
     if (targetElement) {
       targetElement.scrollIntoView({
@@ -665,7 +666,9 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
         block: "start",
       });
     }
-  }, [currentPage]);
+
+    setCurrentPage(page);
+  };
 
   // show all pages if total pages are less than maxPagesToShow
   if (totalPages <= maxPagesToShow) {
@@ -781,7 +784,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   return (
     <section className="pagination">
       <button
-        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+        onClick={() => goToPage(currentPage - 1)}
         disabled={currentPage === 1 || currentPage === 0}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="button-left" />
@@ -789,7 +792,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
       </button>
       {pagination}
       <button
-        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+        onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage === totalPages || totalPages === 0}
       >
         Próximo

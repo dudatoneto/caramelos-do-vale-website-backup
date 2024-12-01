@@ -142,20 +142,20 @@ const Shop = () => {
           WhatsApp
         </p>
       </section>
-      <section id="show-pets-adoption" className="show-pets-adoption">
+      <section id="show-products" className="show-products">
         <Filter
           filterState={filterState}
           handleFilterStateChange={handleFilterStateChange}
         />
-        <section className="pet-pages">
+        <section className="product-pages">
           {currentProducts.length ? (
-            <div className="pet-cards">
+            <div className="product-cards">
               {currentProducts.map((product) => (
                 <ProductCard key={product.id} productInfo={product} />
               ))}
             </div>
           ) : (
-            <p className="no-pets">
+            <p>
               Não há produtos disponíveis com os filtros selecionados.
             </p>
           )}
@@ -404,7 +404,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   };
 
   useEffect(() => {
-    const targetElement = document.getElementById("show-pets-adoption");
+    const targetElement = document.getElementById("show-products");
     if (targetElement) {
       targetElement.scrollIntoView({
         behavior: "smooth",
