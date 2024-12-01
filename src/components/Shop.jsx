@@ -400,10 +400,6 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   let pagination = [];
 
   const goToPage = (page) => {
-    setCurrentPage(page);
-  };
-
-  useEffect(() => {
     const targetElement = document.getElementById("show-products");
     if (targetElement) {
       targetElement.scrollIntoView({
@@ -411,7 +407,9 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
         block: "start",
       });
     }
-  }, [currentPage]);
+    
+    setCurrentPage(page);
+  };
 
   // show all pages if total pages are less than maxPagesToShow
   if (totalPages <= maxPagesToShow) {
