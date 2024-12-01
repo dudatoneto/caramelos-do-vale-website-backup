@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer-left">
         <img
           className="logo img-footer"
-          src="../src/images/logo-caramelos-do-vale.png"
+          src="logo-caramelos-do-vale.png"
           alt="Imagem do logo da Associação Caramelos do Vale"
         />
         <div>

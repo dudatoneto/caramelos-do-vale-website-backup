@@ -10,7 +10,7 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
         <Link to="/">
           <img
             className="logo img-header"
-            src="../src/images/logo-caramelos-do-vale.png"
+            src="logo-caramelos-do-vale.png"
             alt="Imagem do logo da Associação Caramelos do Vale"
           />
         </Link>

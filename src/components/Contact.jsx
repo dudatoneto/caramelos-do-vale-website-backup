@@ -44,7 +44,7 @@ const Contact = () => {
         <div className="contact-img contact-img1">
           <img
             className="image8 img-round"
-            src="../src/images/contact1.jpg"
+            src="contact1.jpg"
             alt="Imagem do cão de nome Timóteo"
           />
           <p className="contact-img-description contact-description1">
@@ -54,7 +54,7 @@ const Contact = () => {
         <div className="contact-img contact-img2">
           <img
             className="image9 img-round"
-            src="../src/images/contact2.jpg"
+            src="contact2.jpg"
             alt="Imagem do cão de nome Lobo"
           />
           <p className="contact-img-description contact-description2">

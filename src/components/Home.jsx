@@ -47,14 +47,14 @@ const Home = () => {
     <>
       <img
         className="home-main-img"
-        src="../src/images/home1.png"
+        src="home1.png"
         alt="Foto de um dos animais resgatado e abrigado pelol projeto"
       />
       <main className="home">
         <section className="home-about-us">
           <img
             className="home-about-us-img"
-            src="../src/images/about-us2.jpg"
+            src="about-us2.jpg"
             alt="Foto dos dois cães caramelos que foram a inspiração para o início do projeto"
           />
           <div className="description-2">
@@ -72,13 +72,13 @@ const Home = () => {
             </Link>
           </div>
         </section>
-        <section className="xlarge-margin">
+        <section className="large-margin">
           <h2>Já abrigamos e cuidamos de:</h2>
           <div className="xsmall-margin">
           <h1 className="home-pets-number">172</h1>
           <h2>animais</h2></div>
         </section>
-        <section className="xlarge-margin">
+        <section className="large-margin">
           <h2 className="small-margin">
             E como posso ajudar o projeto Caramelos do Vale?
           </h2>

@@ -20,7 +20,7 @@ const Donations = () => {
             <h2>Doações recorrentes através da plataforma APOIA.se</h2>
             <img
               className="logo"
-              src="../src/images/apoia-se.png"
+              src="apoia-se.png"
               alt="Imagem do logo da plataforma APOIA.se"
             />
           </div>
@@ -48,7 +48,7 @@ const Donations = () => {
             <h2>Doações diretamente para a Associação Caramelos do Vale</h2>
             <img
               className="logo"
-              src="../src/images/logo-caramelos-do-vale.png"
+              src="logo-caramelos-do-vale.png"
               alt="Imagem do logo da Associação Caramelos do Vale"
             />
           </div>

@@ -12,7 +12,7 @@ const AboutUs = () => {
       <section className="about-us large-margin">
         <img
           className="image1"
-          src="../src/images/about-us1.jpg"
+          src="about-us1.jpg"
           alt="Foto da nossa voluntária Amanda com um dos cães sob cuidado do projeto"
         />
         <div className="description">
@@ -67,7 +67,7 @@ const AboutUs = () => {
         <div className="description-history">
           <img
             className="image2"
-            src="../src/images/about-us2.jpg"
+            src="about-us2.jpg"
             alt="Foto dos dois cães caramelos que foram a inspiração para o início do projeto"
           />
           <div className="description">
@@ -123,28 +123,28 @@ const AboutUs = () => {
           <picture>
             <img
               className="image3 img-round img-join-us"
-              src="../src/images/join-us1.jpg"
+              src="join-us1.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
           <picture>
             <img
               className="image4 img-round img-join-us"
-              src="../src/images/join-us2.jpg"
+              src="join-us2.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
           <picture>
             <img
               className="image5 img-round img-join-us"
-              src="../src/images/join-us3.jpg"
+              src="join-us3.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
           <picture>
             <img
               className="image6 img-round img-join-us"
-              src="../src/images/join-us4.jpg"
+              src="join-us4.jpg"
               alt="Imagem de um dos cães ajudado pelo projeto"
             />
           </picture>
@@ -152,7 +152,7 @@ const AboutUs = () => {
         <picture>
           <img
             className="image7"
-            src="../src/images/join-us5.jpg"
+            src="join-us5.jpg"
             alt="Foto dos nossos queridos voluntários do projeto no espaço que abriga os cães do projeto"
           />
         </picture>
