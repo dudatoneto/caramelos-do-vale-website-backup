@@ -106,7 +106,7 @@ const PetDetails = () => {
           </p>
           <div>
             <p className="button-primary button-pet-info">
-              {petInfo.castrated ? (
+              {petInfo.castrated === "sim" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
               ) : (
                 <FontAwesomeIcon icon={faXmark} className="icon-pet-info" />
@@ -114,7 +114,7 @@ const PetDetails = () => {
               Castrado
             </p>
             <p className="button-primary button-pet-info">
-              {petInfo.vaccinated ? (
+              {petInfo.vaccinated === "sim" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
               ) : (
                 <FontAwesomeIcon icon={faXmark} className="icon-pet-info" />
@@ -122,7 +122,7 @@ const PetDetails = () => {
               Vacinado
             </p>
             <p className="button-primary button-pet-info">
-              {petInfo.dewormed ? (
+              {petInfo.dewormed === "sim" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
               ) : (
                 <FontAwesomeIcon icon={faXmark} className="icon-pet-info" />
@@ -130,7 +130,7 @@ const PetDetails = () => {
               Vermifugado
             </p>
             <p className="button-primary button-pet-info">
-              {petInfo.hosted ? (
+              {petInfo.hosted === "sim" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
               ) : (
                 <FontAwesomeIcon icon={faXmark} className="icon-pet-info" />
@@ -138,7 +138,7 @@ const PetDetails = () => {
               Hospedado
             </p>
             <p className="button-primary button-pet-info">
-              {!petInfo.need_sponsorship ? (
+              {!petInfo.need_sponsorship === "não" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
               ) : (
                 <FontAwesomeIcon icon={faXmark} className="icon-pet-info" />
@@ -180,7 +180,7 @@ const PetDetails = () => {
       <section className="pet-cards">
         {petImages.length ? (
           petImages.map((img) => (
-              <img key={img.id} src={img.link} className="pet-photos" />
+            <img key={img.id} src={img.link} className="pet-photos" />
           ))
         ) : (
           <p>Não há fotos disponíveis para exibir.</p>
