@@ -422,7 +422,7 @@ img {
 }
 
 .burger-icon {
-  font-size: 5vw;
+  font-size: 8vw;
 }
 
 .nav-mobile {
@@ -896,6 +896,10 @@ input[type="checkbox"]:checked + .checkbox::after {
 
   .nav-mobile-link {
     margin: 15px auto;
+  }
+  
+  .img-header {
+    width: 25vw;
   }
 }
 

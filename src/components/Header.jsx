@@ -44,12 +44,14 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
           {!mobileMenu ? (
             <FontAwesomeIcon
               icon={faBars}
+              size="3x"
               className="icon burger-icon"
               onClick={menuToggleHandler}
             />
           ) : (
             <FontAwesomeIcon
               icon={faXmark}
+              size="3x"
               className="icon burger-icon"
               onClick={menuToggleHandler}
             />
