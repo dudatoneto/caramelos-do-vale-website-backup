@@ -28,7 +28,7 @@ const Contact = () => {
             className="button-primary xsmall-margin"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/direct/t/caramelosdovale"
+            href="https://www.instagram.com/caramelosdovale"
           >
             Fale com a gente por Instagram
             <FontAwesomeIcon icon={faArrowRight} className="button-icon" />

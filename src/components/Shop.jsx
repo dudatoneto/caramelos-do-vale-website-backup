@@ -155,9 +155,7 @@ const Shop = () => {
               ))}
             </div>
           ) : (
-            <p>
-              Não há produtos disponíveis com os filtros selecionados.
-            </p>
+            <p>Não há produtos disponíveis com os filtros selecionados.</p>
           )}
           <Pagination
             currentPage={currentPage}
@@ -380,7 +378,13 @@ const ProductCard = ({ productInfo }) => {
         <p>{productInfo.type}</p>
         {productInfo.material ? <p>{productInfo.material}</p> : <></>}
         {productInfo.size ? <p>consulte os tamanhos disponíveis</p> : <></>}
-        <p>R${productInfo.price}</p>
+        <p>
+          R$
+          {productInfo.price
+            .toFixed(2) // Ensure two decimal places
+            .toString()
+            .replace(".", ",")}
+        </p>
       </div>
       <a
         className="link button-secondary"
@@ -407,7 +411,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
         block: "start",
       });
     }
-    
+
     setCurrentPage(page);
   };
 
@@ -525,7 +529,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   return (
     <section className="pagination">
       <button
-        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+        onClick={() => goToPage(currentPage - 1)}
         disabled={currentPage === 1 || currentPage === 0}
       >
         <FontAwesomeIcon icon={faArrowLeft} className="button-left" />
@@ -533,7 +537,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
       </button>
       {pagination}
       <button
-        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+        onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage === totalPages || totalPages === 0}
       >
         Próximo

@@ -90,6 +90,18 @@ button {
   font-family: "Inter", serif;
   font-size: 25px;
   margin: auto 7px;
+  color: var(--primary-text-color);
+}
+
+button:active,
+button:focus,
+button:hover {
+  color: var(--primary-text-color);
+}
+
+button:disabled {
+  color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+  cursor: not-allowed;
 }
 
 .button-primary {
@@ -516,12 +528,14 @@ input[type="checkbox"]:checked + .checkbox::after {
   margin-top: 30px;
 }
 
-.show-pets-adoption, .show-products {
+.show-pets-adoption,
+.show-products {
   display: flex;
   justify-content: space-around;
 }
 
-.pet-cards, .product-cards {
+.pet-cards,
+.product-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -554,7 +568,8 @@ input[type="checkbox"]:checked + .checkbox::after {
   margin-top: 50px;
 }
 
-.pet-pages, .product-pages {
+.pet-pages,
+.product-pages {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -733,7 +748,8 @@ input[type="checkbox"]:checked + .checkbox::after {
 
 /* Media query for small screens */
 @media (max-width: 1350px) {
-  .pet-cards, .product-cards {
+  .pet-cards,
+  .product-cards {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -986,7 +1002,8 @@ input[type="checkbox"]:checked + .checkbox::after {
     display: none;
   }
 
-  .show-pets-adoption, .show-products {
+  .show-pets-adoption,
+  .show-products {
     flex-direction: column;
   }
 
@@ -1059,7 +1076,8 @@ input[type="checkbox"]:checked + .checkbox::after {
 }
 
 @media (max-width: 550px) {
-  .pet-cards, .product-cards {
+  .pet-cards,
+  .product-cards {
     grid-template-columns: repeat(1, 1fr);
   }
 
