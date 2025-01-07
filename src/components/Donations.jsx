@@ -138,11 +138,9 @@ const Donations = () => {
           </div>
           <div className="donation-description">
             <p>
-              Ao apadrinhar um de nossos animais, você contribui diretamente
-              para o bem-estar dele, ajudando a cobrir despesas como
-              alimentação, cuidados veterinários, vacinas, e muito mais. Mesmo
-              que não possa adotar, essa é uma maneira de fazer a diferença na
-              vida de um animal resgatado.
+              Seu cão pode ser um super herói! Se ele possui mais de 20 kg e tem
+              a saúde em dia, considere transformá-lo em doador de sangue para a
+              causa animal e salve vidas.
             </p>
             <p>Os pré-requisitos para um cão ser doador são:</p>
             <p>- Mínimo 20kg;</p>

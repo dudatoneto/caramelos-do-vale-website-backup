@@ -138,8 +138,11 @@ const Shop = () => {
       <section>
         <h1 className="title title-adoption">Lojinha dos Caramelos</h1>
         <p className="description-title">
-          Verifique os tamanhos de camisetas disponíveis através do nosso
-          WhatsApp
+          Compre produtos que irão ajudar nossa associação!
+        </p>
+        <p className="description-title">
+          (Verifique os tamanhos de camisetas disponíveis através do nosso
+          WhatsApp)
         </p>
       </section>
       <section id="show-products" className="show-products">

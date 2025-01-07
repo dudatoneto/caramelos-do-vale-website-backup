@@ -35,7 +35,7 @@ const Footer = () => {
             Sobre Nós
           </Link>
           <Link to="/for-adoption" className="link nav-footer-link">
-            Animais para Adoção
+            Adoção e Apadrinhamento
           </Link>
         </nav>
         <nav className="nav-footer">
