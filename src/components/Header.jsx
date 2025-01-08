@@ -25,7 +25,7 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
             Sobre Nós
           </Link>
           <Link to="/for-adoption" className="link nav-desktop-link">
-            Animais para Adoção
+          Adoção e Apadrinhamento
           </Link>
           <Link to="/shop" className="link nav-desktop-link">
             Loja
@@ -81,7 +81,7 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
               className="link nav-mobile-link"
               onClick={menuToggleHandler}
             >
-              Animais para Adoção
+            Adoção e Apadrinhamento
             </Link>
             <Link
               to="/shop"
