@@ -136,7 +136,7 @@ const Shop = () => {
   return (
     <main>
       <section>
-        <h1 className="title title-adoption">Lojinha dos Caramelos</h1>
+        <h1 className="title title-shop">Lojinha dos Caramelos</h1>
         <p className="description-title">
           Verifique os tamanhos de camisetas disponíveis através do nosso
           WhatsApp

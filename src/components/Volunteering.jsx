@@ -23,7 +23,7 @@ const Volunteering = () => {
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faCarSide} size="6x" />
           <h3 className="icon-title">Transporte de Animais</h3>
-          <p>
+          <p className="xsmall-margin">
             Ajude a transportar nossos aumigos a lares temporários, sítio e
             clínica veterinária.
           </p>
@@ -42,7 +42,7 @@ const Volunteering = () => {
           <h3 className="icon-title">
             Participação e doação de comida para os Cafés
           </h3>
-          <p>
+          <p className="xsmall-margin">
             Doe lanchinhos e ajude na venda dos cafés no campus e eventos
             externos, que são um recurso muito importante para nossa causa.
           </p>
@@ -59,7 +59,7 @@ const Volunteering = () => {
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faMobileScreenButton} size="6x" />
           <h3 className="icon-title">Mídias Sociais</h3>
-          <p>
+          <p className="xsmall-margin">
             Use sua criatividade para dar voz aos que não podem falar, ajudando
             nas redes.
           </p>
@@ -76,7 +76,7 @@ const Volunteering = () => {
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faHouse} size="6x" />
           <h3 className="icon-title">Lar Temporário</h3>
-          <p>
+          <p className="xsmall-margin">
             Que tal abrir um espacinho para um dos nossos aumigos aí na sua
             casa?
           </p>
@@ -93,17 +93,19 @@ const Volunteering = () => {
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faHandshake} size="6x" />
           <h3 className="icon-title">Parcerias</h3>
-          <p>
-            Se você ou sua empresa desejam contribuir para nossa causa, existem
-            diversas formas de parcerias:
-          </p>
-          <p>- Atendimento veterinário;</p>
-          <p>
-            - Destinar uma porcentagem das vendas de produtos a favor da
-            Caramelos do Vale;
-          </p>
-          <p>- Eventos e campanhas conjuntas;</p>
-          <p>- Doação de produtos da empresa.</p>
+          <div className="xsmall-margin">
+            <p>
+              Se você ou sua empresa desejam contribuir para nossa causa,
+              existem diversas formas de parcerias:
+            </p>
+            <p>- Atendimento veterinário;</p>
+            <p>
+              - Destinar uma porcentagem das vendas de produtos a favor da
+              Caramelos do Vale;
+            </p>
+            <p>- Eventos e campanhas conjuntas;</p>
+            <p>- Doação de produtos da empresa.</p>
+          </div>
           <a
             className="button-primary"
             target="_blank"

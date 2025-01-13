@@ -9,7 +9,7 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
       <header>
         <Link to="/">
           <img
-            className="logo img-header"
+            className="img-header"
             src="logo-caramelos-do-vale.png"
             alt="Imagem do logo da Associação Caramelos do Vale"
           />

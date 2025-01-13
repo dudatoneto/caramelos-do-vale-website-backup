@@ -75,8 +75,9 @@ const Home = () => {
         <section className="large-margin">
           <h2>Já abrigamos e cuidamos de:</h2>
           <div className="xsmall-margin">
-          <h1 className="home-pets-number">172</h1>
-          <h2>animais</h2></div>
+            <h1 className="home-pets-number">172</h1>
+            <h2>animais</h2>
+          </div>
         </section>
         <section className="large-margin">
           <h2 className="small-margin">
@@ -139,7 +140,7 @@ const PetSimpleCard = ({ petName, petImgLink }) => {
   return (
     <div className="card">
       <img src={petImgLink} />
-      <h3 className="xxsmall-margin">
+      <h3 className="card-title">
         <b>{petName}</b>
       </h3>
     </div>

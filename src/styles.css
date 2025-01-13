@@ -47,20 +47,20 @@ h4 {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 60px;
 }
 
 h2 {
-  font-size: 55px;
+  font-size: 45px;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 a,
 link {
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Inter", serif;
   text-align: center;
   color: var(--primary-text-color);
@@ -70,7 +70,7 @@ link {
 p,
 label {
   color: var(--secondary-text-color);
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Inter", serif;
   margin: 5px auto;
 }
@@ -88,7 +88,7 @@ button {
   border: none;
   cursor: pointer;
   font-family: "Inter", serif;
-  font-size: 25px;
+  font-size: 20px;
   margin: auto 7px;
   color: var(--primary-text-color);
 }
@@ -108,28 +108,27 @@ button:disabled {
   display: inline-block;
   margin: 10px auto;
   padding: 0 5px;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Inter", serif;
   background-color: var(--secondary-color);
   color: white;
   border: 10px solid var(--secondary-color);
   border-radius: 10px;
   cursor: pointer;
-  max-width: 410px;
+  max-width: 400px;
 }
 
 .button-secondary {
   display: inline-block;
   margin: 10px auto;
   padding: 0 5px;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Inter", serif;
   background-color: white;
   color: var(--secondary-color);
   border: 10px solid white;
   border-radius: 10px;
   cursor: pointer;
-  max-width: 410px;
 }
 
 .button-active {
@@ -141,7 +140,7 @@ button:disabled {
 
 .ellipsis {
   font-family: "Inter", serif;
-  font-size: 25px;
+  font-size: 20px;
   margin: auto 7px;
 }
 
@@ -154,7 +153,7 @@ main > section:last-of-type {
 }
 
 .nav-desktop-link {
-  font-size: 20px;
+  font-size: 15px;
   margin-right: 25px;
 }
 
@@ -177,19 +176,19 @@ main > section:last-of-type {
 }
 
 .xlarge-margin {
-  margin: 200px 0;
+  margin: 180px 0;
 }
 
 .large-margin {
-  margin: 150px 0;
+  margin: 130px 0;
 }
 
 .small-margin {
-  margin: 85px 0;
+  margin: 70px 0;
 }
 
 .xsmall-margin {
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 .xxsmall-margin {
@@ -205,8 +204,8 @@ img {
 .image1,
 .image2,
 .home-about-us-img {
-  width: 50%;
-  min-width: 150px;
+  width: 35%;
+  min-width: 100px;
   max-width: 600px;
 }
 
@@ -276,13 +275,13 @@ img {
 .description-history,
 .home-about-us {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
 
 .description {
-  width: 40%;
+  width: 50%;
 }
 
 .numbers,
@@ -294,11 +293,11 @@ img {
 
 .numbers p {
   color: var(--primary-text-color);
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .numbers p:first-of-type {
-  font-size: 70px;
+  font-size: 60px;
 }
 
 .numbers div {
@@ -328,7 +327,7 @@ img {
 }
 
 .operation {
-  padding: 0 5vw;
+  padding: 0 4vw;
 }
 
 .operation p {
@@ -342,6 +341,7 @@ img {
   flex-direction: column;
   margin-bottom: 20px;
   min-height: 250px;
+  justify-content: center;
 }
 
 .join-us p {
@@ -351,8 +351,8 @@ img {
 
 .description-title {
   color: var(--primary-text-color);
-  font-size: 30px;
-  margin: 85px auto;
+  font-size: 20px;
+  margin: 50px auto;
 }
 
 .icon-title {
@@ -375,13 +375,13 @@ img {
 
 .donation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .donation-title {
-  width: 50%;
+  width: 40%;
 }
 
 .donation-icon {
@@ -389,7 +389,7 @@ img {
 }
 
 .donation-description {
-  width: 43%;
+  width: 40%;
   margin: 0;
   color: var(--primary-text-color);
 }
@@ -402,17 +402,18 @@ img {
   border: none;
   margin-top: 30px;
   width: 100%;
-  max-width: 600px;
+  max-width: 550px;
 }
 
 .donation-pix > p {
-  font-size: 33px;
+  font-size: 25px;
 }
 
 .img-header {
-  width: 20vw;
+  width: 25vw;
   margin: 0.5vw 0 0.3vw 1vw;
-  max-width: 250px;
+  border: none;
+  max-width: 13rem;
 }
 
 .burger {
@@ -422,7 +423,7 @@ img {
 }
 
 .burger-icon {
-  font-size: 8vw;
+  font-size: 7vw;
 }
 
 .nav-mobile {
@@ -430,7 +431,7 @@ img {
 }
 
 .img-footer {
-  width: 25vw;
+  width: 20vw;
   max-width: 450px;
   min-width: 150px;
 }
@@ -448,11 +449,11 @@ img {
 }
 
 .footer-left {
-  margin: 2vw 5vw 5vw 5vw;
+  margin: 1vw 5vw 3vw 5vw;
 }
 
 .footer-icon {
-  font-size: clamp(25px, 4vw, 80px);
+  font-size: clamp(25px, 3vw, 80px);
   margin-left: 2vw;
 }
 
@@ -539,7 +540,7 @@ input[type="checkbox"]:checked + .checkbox::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  gap: 20px 10px;
+  gap: 3vw 0;
 }
 
 .card {
@@ -570,6 +571,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 
 .pet-pages,
 .product-pages {
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -634,7 +636,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 }
 
 .button-pet-info {
-  margin: 3px 3px;
+  margin: 5px 10px 5px 0;
 }
 
 .pet-description {
@@ -644,7 +646,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 }
 
 .pet-img {
-  width: 30%;
+  width: 25%;
   max-width: 500px;
   margin: 20px auto 10px auto;
 }
@@ -696,7 +698,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 }
 
 .home-about-us-img {
-  width: 45%;
+  width: 35%;
 }
 
 .description-2 {
@@ -746,6 +748,16 @@ input[type="checkbox"]:checked + .checkbox::after {
   max-width: 680px;
 }
 
+.card-title {
+  font-size: clamp(30px, 900%, 2.5vw);
+  margin-bottom: 2%;
+}
+
+.medium-width-p p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Media query for small screens */
 @media (max-width: 1350px) {
   .pet-cards,
@@ -792,7 +804,11 @@ input[type="checkbox"]:checked + .checkbox::after {
 
   .donation-icon {
     margin-top: 10px;
-    font-size: 6em;
+    font-size: 5em;
+  }
+
+  .logo {
+    max-width: 300px;
   }
 
   .pet-info {
@@ -807,15 +823,19 @@ input[type="checkbox"]:checked + .checkbox::after {
   }
 
   h1 {
-    font-size: 50px;
-  }
-
-  h2 {
     font-size: 40px;
   }
 
-  h3 {
+  h2 {
     font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .large-margin {
+    margin: 60px 0;
   }
 
   p,
@@ -824,7 +844,7 @@ input[type="checkbox"]:checked + .checkbox::after {
   label,
   button,
   .ellipsis {
-    font-size: 19px;
+    font-size: 15px;
   }
 
   .about-us,
@@ -873,6 +893,10 @@ input[type="checkbox"]:checked + .checkbox::after {
     border-width: 0 2px 2px 0;
   }
 
+  .donation-pix > p {
+    font-size: 20px;
+  }
+
   /* .pet-photos-display p {
     margin-bottom: 20vw;
   } */
@@ -897,17 +921,9 @@ input[type="checkbox"]:checked + .checkbox::after {
   .nav-mobile-link {
     margin: 15px auto;
   }
-  
-  .img-header {
-    width: 25vw;
-  }
 }
 
 @media (max-width: 850px) {
-  .large-margin {
-    margin: 60px 0;
-  }
-
   .xlarge-margin {
     margin: 100px 0;
   }
@@ -948,11 +964,11 @@ input[type="checkbox"]:checked + .checkbox::after {
   }
 
   .numbers p:first-of-type {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .numbers p {
-    font-size: 19px;
+    font-size: 15px;
   }
 
   .numbers div {
@@ -989,17 +1005,17 @@ input[type="checkbox"]:checked + .checkbox::after {
     position: static;
     width: 100%;
     max-width: none;
-    margin: 85px auto;
+    margin: 50px auto;
   }
 
   .donation-pix > p {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 800px) {
   .title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   .filter-desktop {
@@ -1014,6 +1030,11 @@ input[type="checkbox"]:checked + .checkbox::after {
   .filter-mobile {
     display: block;
     margin: 30px auto;
+  }
+
+  .pet-pages,
+  .product-pages {
+    width: 100%;
   }
 }
 
@@ -1052,7 +1073,7 @@ input[type="checkbox"]:checked + .checkbox::after {
   }
 
   .footer-right {
-    margin-top: 0;
+    margin-top: 15px;
     margin-bottom: 30px;
   }
 
@@ -1083,6 +1104,7 @@ input[type="checkbox"]:checked + .checkbox::after {
   .pet-cards,
   .product-cards {
     grid-template-columns: repeat(1, 1fr);
+    gap: 30px 0;
   }
 
   .card {
@@ -1093,10 +1115,18 @@ input[type="checkbox"]:checked + .checkbox::after {
     width: 70%;
   }
 
+  .card p {
+    font-size: 20px;
+  }
+
   .button-inactive,
   .ellipsis {
     display: none;
   }
+}
+
+.title-shop {
+  margin-bottom: 50px;
 }
 
 @media (max-width: 500px) {
@@ -1116,8 +1146,13 @@ input[type="checkbox"]:checked + .checkbox::after {
 }
 
 @media (max-width: 450px) {
-  .title-adoption {
-    font-size: 35px;
+  .title-adoption,
+  .title-shop {
+    font-size: 25px;
+  }
+
+  .description-title {
+    font-size: 15px;
   }
 
   .pet-img {
@@ -1127,7 +1162,7 @@ input[type="checkbox"]:checked + .checkbox::after {
 
 @media (max-width: 360px) {
   .little-text {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
