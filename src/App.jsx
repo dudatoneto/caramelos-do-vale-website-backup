@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import "./styles.css";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
@@ -51,7 +52,11 @@ const App = () => {
 
   return (
     <>
-      <Header menuToggleHandler={handleMenuToggle} mobileMenu={mobileMenu} currentLocation={location.pathname} />
+      <Header
+        menuToggleHandler={handleMenuToggle}
+        mobileMenu={mobileMenu}
+        currentLocation={location.pathname}
+      />
       {!mobileMenu && (
         <>
           <Routes>
@@ -68,6 +73,7 @@ const App = () => {
           <Footer />
         </>
       )}
+      <Analytics />
     </>
   );
 };
