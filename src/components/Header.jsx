@@ -3,7 +3,23 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Header = ({ menuToggleHandler, mobileMenu }) => {
+const Header = ({ menuToggleHandler, mobileMenu, currentLocation }) => {
+  const navLinks = [
+    { path: "/donations", label: "Como Ajudar" },
+    { path: "/about-us", label: "Sobre Nós" },
+    { path: "/for-adoption", label: "Adoção e Apadrinhamento", isParent: true },
+    { path: "/shop", label: "Loja" },
+    { path: "/events", label: "Eventos" },
+    { path: "/volunteering", label: "Voluntariado" },
+    { path: "/contact", label: "Contato" },
+  ];
+
+  const isActive = (path, isParent = false) => {
+    return isParent
+      ? currentLocation.startsWith(path)
+      : currentLocation === path;
+  };
+
   return (
     <>
       <header>
@@ -15,102 +31,44 @@ const Header = ({ menuToggleHandler, mobileMenu }) => {
           />
         </Link>
         <nav className="nav-desktop">
-          <Link
-            to="/donations"
-            className="link nav-desktop-link button-primary"
-          >
-            Como Ajudar
-          </Link>
-          <Link to="/about-us" className="link nav-desktop-link">
-            Sobre Nós
-          </Link>
-          <Link to="/for-adoption" className="link nav-desktop-link">
-          Adoção e Apadrinhamento
-          </Link>
-          <Link to="/shop" className="link nav-desktop-link">
-            Loja
-          </Link>
-          <Link to="/events" className="link nav-desktop-link">
-            Eventos
-          </Link>
-          <Link to="/volunteering" className="link nav-desktop-link">
-            Voluntariado
-          </Link>
-          <Link to="/contact" className="link nav-desktop-link">
-            Contato
-          </Link>
+          {navLinks.map(({ path, label, isParent }) => (
+            <Link
+              key={path}
+              to={path}
+              className={`link nav-desktop-link ${
+                isActive(path, isParent) ? "button-primary" : ""
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
+
         <div className="burger">
-          {!mobileMenu ? (
-            <FontAwesomeIcon
-              icon={faBars}
-              size="3x"
-              className="icon burger-icon"
-              onClick={menuToggleHandler}
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={faXmark}
-              size="3x"
-              className="icon burger-icon"
-              onClick={menuToggleHandler}
-            />
-          )}
+          <FontAwesomeIcon
+            icon={mobileMenu ? faXmark : faBars}
+            size="3x"
+            className="icon burger-icon"
+            onClick={menuToggleHandler}
+          />
         </div>
       </header>
 
       {mobileMenu && (
         <main className="menu-mobile">
           <nav className="nav-mobile">
-            <Link
-              to="/donations"
-              className="link nav-mobile-link button-primary"
-              onClick={menuToggleHandler}
-            >
-              Como Ajudar
-            </Link>
-            <Link
-              to="/about-us"
-              className="link nav-mobile-link"
-              onClick={menuToggleHandler}
-            >
-              Sobre Nós
-            </Link>
-            <Link
-              to="/for-adoption"
-              className="link nav-mobile-link"
-              onClick={menuToggleHandler}
-            >
-            Adoção e Apadrinhamento
-            </Link>
-            <Link
-              to="/shop"
-              className="link nav-mobile-link"
-              onClick={menuToggleHandler}
-            >
-              Loja
-            </Link>
-            <Link
-              to="/events"
-              className="link nav-mobile-link"
-              onClick={menuToggleHandler}
-            >
-              Eventos
-            </Link>
-            <Link
-              to="/volunteering"
-              className="link nav-mobile-link"
-              onClick={menuToggleHandler}
-            >
-              Voluntariado
-            </Link>
-            <Link
-              to="/contact"
-              className="link nav-mobile-link"
-              onClick={menuToggleHandler}
-            >
-              Contato
-            </Link>
+            {navLinks.map(({ path, label, isParent }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`link nav-mobile-link ${
+                  isActive(path, isParent) ? "button-primary" : ""
+                }`}
+                onClick={menuToggleHandler}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
         </main>
       )}

@@ -51,7 +51,7 @@ const App = () => {
 
   return (
     <>
-      <Header menuToggleHandler={handleMenuToggle} mobileMenu={mobileMenu} />
+      <Header menuToggleHandler={handleMenuToggle} mobileMenu={mobileMenu} currentLocation={location.pathname} />
       {!mobileMenu && (
         <>
           <Routes>
