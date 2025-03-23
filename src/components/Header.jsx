@@ -5,12 +5,12 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ menuToggleHandler, mobileMenu, currentLocation }) => {
   const navLinks = [
-    { path: "/donations", label: "Como Ajudar" },
     { path: "/about-us", label: "Sobre Nós" },
     { path: "/for-adoption", label: "Adoção e Apadrinhamento", isParent: true },
+    { path: "/donations", label: "Como Ajudar" },
+    { path: "/volunteering", label: "Voluntariado" },
     { path: "/shop", label: "Loja" },
     { path: "/events", label: "Eventos" },
-    { path: "/volunteering", label: "Voluntariado" },
     { path: "/contact", label: "Contato" },
   ];
 

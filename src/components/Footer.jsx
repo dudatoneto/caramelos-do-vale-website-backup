@@ -4,6 +4,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+  const navLinks = [
+    { path: "/", label: "Página Inicial", bold: true },
+    { path: "/about-us", label: "Sobre Nós" },
+    { path: "/for-adoption", label: "Adoção e Apadrinhamento" },
+    { path: "/donations", label: "Como Ajudar" },
+    { path: "/volunteering", label: "Voluntariado" },
+    { path: "/shop", label: "Loja" },
+    { path: "/events", label: "Eventos" },
+    { path: "/contact", label: "Contato" },
+  ];
+
   return (
     <footer>
       <div className="footer-left">
@@ -22,36 +33,17 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-right">
-        <nav className="nav-footer">
-          <b>
-            <Link to="/" className="link nav-footer-link">
-              Página Inicial
-            </Link>
-          </b>
-          <Link to="/donations" className="link nav-footer-link">
-            Como Ajudar
-          </Link>
-          <Link to="/about-us" className="link nav-footer-link">
-            Sobre Nós
-          </Link>
-          <Link to="/for-adoption" className="link nav-footer-link">
-            Adoção e Apadrinhamento
-          </Link>
-        </nav>
-        <nav className="nav-footer">
-          <Link to="/shop" className="link nav-footer-link">
-            Loja
-          </Link>
-          <Link to="/events" className="link nav-footer-link">
-            Eventos
-          </Link>
-          <Link to="/volunteering" className="link nav-footer-link">
-            Voluntariado
-          </Link>
-          <Link to="/contact" className="link nav-footer-link">
-            Contato
-          </Link>
-        </nav>
+        {[0, 4].map((startIndex) => (
+          <nav key={startIndex} className="nav-footer">
+            {navLinks
+              .slice(startIndex, startIndex + 4)
+              .map(({ path, label, bold }) => (
+                <Link key={path} to={path} className="link nav-footer-link">
+                  {bold ? <b>{label}</b> : label}
+                </Link>
+              ))}
+          </nav>
+        ))}
       </div>
     </footer>
   );
