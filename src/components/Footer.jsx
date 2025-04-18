@@ -24,10 +24,10 @@ const Footer = () => {
           alt="Imagem do logo da Associação Caramelos do Vale"
         />
         <div>
-          <a>
+          <a href="https://www.instagram.com/caramelosdovale/">
             <FontAwesomeIcon icon={faInstagram} className="icon footer-icon" />
           </a>
-          <a>
+          <a href="https://www.tiktok.com/@caramelosdovale">
             <FontAwesomeIcon icon={faTiktok} className="icon footer-icon" />
           </a>
         </div>
