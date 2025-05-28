@@ -8,7 +8,7 @@ import {
   faCaretUp,
 } from "@fortawesome/free-solid-svg-icons";
 
-const PHONE_NUMBER = "5551991084114";
+const PHONE_NUMBER = "555197812157";
 
 const fetchProducts = async () => {
   const supabaseConnection = createClient(
