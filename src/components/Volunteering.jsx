@@ -31,7 +31,7 @@ const Volunteering = () => {
             className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://docs.google.com/forms/d/1tuDtWfqGCTWIJC2AnsDsrJr4a3y1IYpsU2MPc3zIjNQ/viewform?edit_requested=true"
+            href="https://amandasilveira.limesurvey.net/512578"
           >
             Formulário para voluntários
             <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
@@ -50,12 +50,13 @@ const Volunteering = () => {
             className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://docs.google.com/forms/d/1tuDtWfqGCTWIJC2AnsDsrJr4a3y1IYpsU2MPc3zIjNQ/viewform?edit_requested=true"
+            href="https://amandasilveira.limesurvey.net/512578"
           >
             Formulário para voluntários
             <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
           </a>
         </section>
+        {/*
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faMobileScreenButton} size="6x" />
           <h3 className="icon-title">Mídias Sociais</h3>
@@ -73,6 +74,7 @@ const Volunteering = () => {
             <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
           </a>
         </section>
+        */}
         <section className="small-margin medium-width-p">
           <FontAwesomeIcon icon={faHouse} size="6x" />
           <h3 className="icon-title">Lar Temporário</h3>
