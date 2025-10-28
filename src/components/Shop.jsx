@@ -372,7 +372,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
 
 const ProductCard = ({ productInfo }) => {
   return (
-    <div className="card product-card">
+    <div className='card product-card'>
       <img src={productInfo.img_link} />
       <div>
         <p>
@@ -380,13 +380,16 @@ const ProductCard = ({ productInfo }) => {
         </p>
         <p>{productInfo.type}</p>
         {productInfo.material ? <p>{productInfo.material}</p> : <></>}
-        {productInfo.size ? <p>consulte os tamanhos disponíveis</p> : <></>}
+        {productInfo.available && productInfo.size && 
+            <p>consulte os tamanhos disponíveis</p>
+        }
         <p>
           R$
           {productInfo.price
             .toFixed(2) // Ensure two decimal places
             .toString()
             .replace(".", ",")}
+          {!productInfo.available && ' (Indisponível)'}
         </p>
       </div>
       <a
