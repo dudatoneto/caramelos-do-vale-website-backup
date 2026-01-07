@@ -11,7 +11,7 @@ const Footer = () => {
     { path: "/donations", label: "Como Ajudar" },
     { path: "/volunteering", label: "Voluntariado" },
     { path: "/shop", label: "Loja" },
-    { path: "/events", label: "Eventos" },
+    // { path: "/events", label: "Eventos" },
     { path: "/contact", label: "Contato" },
   ];
 
