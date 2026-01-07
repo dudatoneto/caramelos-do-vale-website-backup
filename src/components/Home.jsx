@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,8 +31,22 @@ const fetchPetsInfo = async () => {
   }
 };
 
+const HERO_IMAGES = [
+  {
+    link: 'https://www.instagram.com/caramelosdovale/',
+    src: "home2.png",
+    alt: "Foto de animal resgatado e abrigado pelo projeto. Acompanhe os nossos eventos, novidades e muito mais pelas nossas redes sociais.",
+  },
+  {
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSd2H8sZQE5ytRxgycFujwL8XaOm2dwWag1b4_kT7hytksjvcA/viewform?usp=send_form',
+    src: "home3.png",
+    alt: "Foto de outro animal resgatado e abrigado pelo projeto. Inscreva-se como voluntário preenchendo o formulário!",
+  },
+];
+
 const Home = () => {
   const [petsInfo, setPetsInfo] = useState([]);
+  const [heroIndex, setHeroIndex] = useState(0);
 
   useEffect(() => {
     const getPetsInfo = async () => {
@@ -43,13 +57,23 @@ const Home = () => {
     getPetsInfo();
   }, []);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setHeroIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <>
-      <img
-        className="home-main-img"
-        src="home1.png"
-        alt="Foto de um dos animais resgatado e abrigado pelol projeto"
-      />
+      <a href={HERO_IMAGES[heroIndex].link} target="_blank" rel="noopener noreferrer">
+        <img
+          className="home-main-img"
+          src={HERO_IMAGES[heroIndex].src}
+          alt={HERO_IMAGES[heroIndex].alt}
+        />
+      </a>
       <main className="home">
         <section className="home-about-us">
           <img
