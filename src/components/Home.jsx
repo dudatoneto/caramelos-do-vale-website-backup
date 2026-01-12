@@ -34,12 +34,12 @@ const fetchPetsInfo = async () => {
 const HERO_IMAGES = [
   {
     link: 'https://www.instagram.com/caramelosdovale/',
-    src: "home2.png",
+    src: "home2New.png",
     alt: "Foto de animal resgatado e abrigado pelo projeto. Acompanhe os nossos eventos, novidades e muito mais pelas nossas redes sociais.",
   },
   {
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSd2H8sZQE5ytRxgycFujwL8XaOm2dwWag1b4_kT7hytksjvcA/viewform?usp=send_form',
-    src: "home3.png",
+    src: "home3New.png",
     alt: "Foto de outro animal resgatado e abrigado pelo projeto. Inscreva-se como voluntário preenchendo o formulário!",
   },
 ];
