@@ -389,10 +389,10 @@ const ProductCard = ({ productInfo }) => {
             .toFixed(2) // Ensure two decimal places
             .toString()
             .replace(".", ",")}
-          {!productInfo.available && ' (Indisponível)'}
         </p>
+        {!productInfo.available && <p>(Indisponível)</p>}
       </div>
-      <a
+      {productInfo.available && <a
         className="link button-secondary"
         target="_blank"
         rel="noopener noreferrer"
@@ -400,7 +400,7 @@ const ProductCard = ({ productInfo }) => {
       >
         Encomende por WhatsApp
         <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
-      </a>
+      </a>}
     </div>
   );
 };
