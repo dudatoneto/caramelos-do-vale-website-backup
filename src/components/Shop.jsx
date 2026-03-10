@@ -372,7 +372,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
 
 const ProductCard = ({ productInfo }) => {
   return (
-    <div className="card product-card">
+    <div className='card product-card'>
       <img src={productInfo.img_link} />
       <div>
         <p>
@@ -380,7 +380,9 @@ const ProductCard = ({ productInfo }) => {
         </p>
         <p>{productInfo.type}</p>
         {productInfo.material ? <p>{productInfo.material}</p> : <></>}
-        {productInfo.size ? <p>consulte os tamanhos disponíveis</p> : <></>}
+        {productInfo.available && productInfo.size && 
+            <p>consulte os tamanhos disponíveis</p>
+        }
         <p>
           R$
           {productInfo.price
@@ -388,8 +390,9 @@ const ProductCard = ({ productInfo }) => {
             .toString()
             .replace(".", ",")}
         </p>
+        {!productInfo.available && <p>(Indisponível)</p>}
       </div>
-      <a
+      {productInfo.available && <a
         className="link button-secondary"
         target="_blank"
         rel="noopener noreferrer"
@@ -397,7 +400,7 @@ const ProductCard = ({ productInfo }) => {
       >
         Encomende por WhatsApp
         <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
-      </a>
+      </a>}
     </div>
   );
 };
