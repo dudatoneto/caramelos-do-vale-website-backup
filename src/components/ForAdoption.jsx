@@ -46,15 +46,15 @@ const petInfoParsing = (petInfo) => {
     petInfo.gender = "-";
   }
 
-  if (parseInt(petInfo.age) == 1) {
-    petInfo.age = petInfo.age + " ano";
-  } else if (parseInt(petInfo.age) > 1) {
-    petInfo.age = petInfo.age + " anos";
-  } else if (parseFloat(petInfo.age) < 1 && parseFloat(petInfo.age) > 0) {
-    petInfo.age = (parseFloat(petInfo.age) * 12).toString() + " meses";
-  } else {
-    petInfo.age = "-";
-  }
+  // if (parseInt(petInfo.age) == 1) {
+  //   petInfo.age = petInfo.age + " ano";
+  // } else if (parseInt(petInfo.age) > 1) {
+  //   petInfo.age = petInfo.age + " anos";
+  // } else if (parseFloat(petInfo.age) < 1 && parseFloat(petInfo.age) > 0) {
+  //   petInfo.age = (parseFloat(petInfo.age) * 12).toString() + " meses";
+  // } else {
+  //   petInfo.age = "-";
+  // }
 
   petInfo.castrated ? (petInfo.castrated = "sim") : (petInfo.castrated = "não");
   petInfo.dewormed ? (petInfo.dewormed = "sim") : (petInfo.dewormed = "não");
@@ -77,6 +77,20 @@ const petInfoParsing = (petInfo) => {
   petInfo.isParsed = true; // Mark as parsed
 
   return petInfo;
+};
+
+const normalizeAgeCategory = (age) => {
+  if (!age) return null;
+  const normalized = age.toString().trim().toLowerCase();
+
+  if (normalized === "filhote") return "Filhote";
+  if (normalized === "jovem") return "Jovem";
+  if (normalized === "adulto") return "Adulto";
+  if (normalized === "idoso" || normalized === "sênior" || normalized === "senior") {
+    return "Sênior";
+  }
+
+  return null;
 };
 
 const filterPets = (filterState, pets) => {
@@ -103,31 +117,34 @@ const filterPets = (filterState, pets) => {
     const anyAgeSelected = Object.values(filterState.age).some(
       (selected) => selected
     );
+    const petAgeCategory = normalizeAgeCategory(pet.age);
     const ageFilter =
       !anyAgeSelected ||
-      Object.keys(filterState.age).some((age) => {
-        if (!filterState.age[age]) return false;
-        switch (age) {
-          case "Filhote":
-            return pet.age.includes("meses") || pet.age.includes("mês");
-          case "Jovem":
-            return (
-              parseInt(pet.age) >= 1 &&
-              parseInt(pet.age) <= 5 &&
-              pet.age.includes("ano")
-            );
-          case "Adulto":
-            return (
-              parseInt(pet.age) >= 5 &&
-              parseInt(pet.age) <= 10 &&
-              pet.age.includes("ano")
-            );
-          case "Sênior":
-            return parseInt(pet.age) >= 10 && pet.age.includes("ano");
-          default:
-            return false;
-        }
-      });
+      (petAgeCategory
+        ? filterState.age[petAgeCategory]
+        : Object.keys(filterState.age).some((age) => {
+            if (!filterState.age[age]) return false;
+            switch (age) {
+              case "Filhote":
+                return pet.age.includes("meses") || pet.age.includes("mês");
+              case "Jovem":
+                return (
+                  parseInt(pet.age) >= 1 &&
+                  parseInt(pet.age) <= 5 &&
+                  pet.age.includes("ano")
+                );
+              case "Adulto":
+                return (
+                  parseInt(pet.age) >= 5 &&
+                  parseInt(pet.age) <= 10 &&
+                  pet.age.includes("ano")
+                );
+              case "Sênior":
+                return parseInt(pet.age) >= 10 && pet.age.includes("ano");
+              default:
+                return false;
+            }
+          }));
 
     // Sponsorship Filter
     const sponsorshipFilter =
@@ -364,9 +381,9 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               checked={filterState.age.Jovem}
               onChange={() => handleFilterStateChange("age", "Jovem")}
             />
-            <span className="checkbox"></span>De 1 a 5 anos
+            <span className="checkbox"></span>De 1 a 6 anos
           </label>
-          <label htmlFor="adult-desktop">
+          {/* <label htmlFor="adult-desktop">
             <input
               type="checkbox"
               id="adult-desktop"
@@ -375,7 +392,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               onChange={() => handleFilterStateChange("age", "Adulto")}
             />
             <span className="checkbox"></span>De 5 a 10 anos
-          </label>
+          </label> */}
           <label htmlFor="senior-desktop">
             <input
               type="checkbox"
@@ -384,7 +401,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
               checked={filterState.age.Sênior}
               onChange={() => handleFilterStateChange("age", "Sênior")}
             />
-            <span className="checkbox"></span>Mais de 10 anos
+            <span className="checkbox"></span>Mais de 6 anos
           </label>
         </div>
         <div>

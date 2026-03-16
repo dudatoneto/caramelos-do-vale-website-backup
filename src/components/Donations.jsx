@@ -183,8 +183,8 @@ const Donations = () => {
               valor arrecadado com as vendas é revertido para ajudar no cuidado
               e tratamento dos nossos peludos.
             </p>
-            <Link to="/events" className="link button-primary">
-              Confira nossa página de eventos
+            <Link to="https://docs.google.com/forms/d/e/1FAIpQLSd2H8sZQE5ytRxgycFujwL8XaOm2dwWag1b4_kT7hytksjvcA/viewform?usp=send_form" className="link button-primary">
+              Formulário para voluntários
               <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
             </Link>
           </div>

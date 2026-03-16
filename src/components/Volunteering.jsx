@@ -27,11 +27,20 @@ const Volunteering = () => {
             Ajude a transportar nossos aumigos a lares temporários, sítio e
             clínica veterinária.
           </p>
-          <a
+          {/* <a
             className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
             href="https://amandasilveira.limesurvey.net/512578"
+          >
+            Formulário para voluntários
+            <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
+          </a> */}
+          <a
+            className="button-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd2H8sZQE5ytRxgycFujwL8XaOm2dwWag1b4_kT7hytksjvcA/viewform?usp=send_form"
           >
             Formulário para voluntários
             <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
@@ -46,11 +55,20 @@ const Volunteering = () => {
             Doe lanchinhos e ajude na venda dos cafés no campus e eventos
             externos, que são um recurso muito importante para nossa causa.
           </p>
-          <a
+          {/* <a
             className="button-primary"
             target="_blank"
             rel="noopener noreferrer"
             href="https://amandasilveira.limesurvey.net/512578"
+          >
+            Formulário para voluntários
+            <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
+          </a> */}
+           <a
+            className="button-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd2H8sZQE5ytRxgycFujwL8XaOm2dwWag1b4_kT7hytksjvcA/viewform?usp=send_form"
           >
             Formulário para voluntários
             <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
