@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
@@ -14,6 +14,7 @@ import PetDetails from "./components/PetDetails.jsx";
 import Shop from "./components/Shop.jsx";
 import Home from "./components/Home.jsx";
 import Events from "./components/Events.jsx";
+import { initGA, logPageView } from "./services/analytics.js";
 
 const App = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -50,8 +51,23 @@ const App = () => {
     }
   }, [location]);
 
+  function AnalyticsTracker() {
+    const location = useLocation();
+
+    useEffect(() => {
+      initGA();
+    }, []);
+
+    useEffect(() => {
+      logPageView();
+    }, [location]);
+
+    return null;
+  }
+
   return (
     <>
+      <AnalyticsTracker />
       <Header
         menuToggleHandler={handleMenuToggle}
         mobileMenu={mobileMenu}

@@ -13,7 +13,7 @@ const PHONE_NUMBER = "555197812157";
 const fetchProducts = async () => {
   const supabaseConnection = createClient(
     import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_KEY
+    import.meta.env.VITE_SUPABASE_KEY,
   );
 
   const { data, error } = await supabaseConnection.from("products").select("*");
@@ -30,12 +30,12 @@ const fetchProducts = async () => {
 const filterProducts = (filterState, products) => {
   return products.filter((product) => {
     const anyTypeSelected = Object.values(filterState.type).some(
-      (selected) => selected
+      (selected) => selected,
     );
     const typeFilter =
       !anyTypeSelected ||
       Object.keys(filterState.type).some(
-        (type) => filterState.type[type] && product.type === type
+        (type) => filterState.type[type] && product.type === type,
       );
 
     return typeFilter;
@@ -86,7 +86,7 @@ const Shop = () => {
       const indexOfFirstItem = indexOfLastItem - productsPerPage;
 
       setCurrentProducts(
-        filteredProducts.slice(indexOfFirstItem, indexOfLastItem)
+        filteredProducts.slice(indexOfFirstItem, indexOfLastItem),
       );
 
       setProductsArrayReady(true);
@@ -372,7 +372,7 @@ const Filter = ({ filterState, handleFilterStateChange }) => {
 
 const ProductCard = ({ productInfo }) => {
   return (
-    <div className='card product-card'>
+    <div className="card product-card">
       <img src={productInfo.img_link} />
       <div>
         <p>
@@ -380,9 +380,9 @@ const ProductCard = ({ productInfo }) => {
         </p>
         <p>{productInfo.type}</p>
         {productInfo.material ? <p>{productInfo.material}</p> : <></>}
-        {productInfo.available && productInfo.size && 
-            <p>consulte os tamanhos disponíveis</p>
-        }
+        {productInfo.available && productInfo.size && (
+          <p>consulte os tamanhos disponíveis</p>
+        )}
         <p>
           R$
           {productInfo.price
@@ -392,15 +392,17 @@ const ProductCard = ({ productInfo }) => {
         </p>
         {!productInfo.available && <p>(Indisponível)</p>}
       </div>
-      {productInfo.available && <a
-        className="link button-secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-        href={`https://wa.me/${PHONE_NUMBER}?text=Olá,%20tenho%20interesse%20em%adquirir%20o%20produto%20${productInfo.name}`}
-      >
-        Encomende por WhatsApp
-        <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
-      </a>}
+      {productInfo.available && (
+        <a
+          className="link button-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://wa.me/${PHONE_NUMBER}?text=Olá,%20tenho%20interesse%20em%adquirir%20o%20produto%20${productInfo.name}`}
+        >
+          Encomende por WhatsApp
+          <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
+        </a>
+      )}
     </div>
   );
 };
@@ -431,7 +433,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className={currentPage === page ? "button-active" : "button-inactive"}
         >
           {page}
-        </button>
+        </button>,
       );
     }
   } else if (
@@ -446,7 +448,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className="button-inactive"
         >
           {page}
-        </button>
+        </button>,
       );
     }
 
@@ -481,7 +483,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
         <p key="ellipsis-end" className="ellipsis">
           ...
         </p>
-      )
+      ),
     );
     for (
       let page = totalPages - Math.floor(maxPagesToShow / 2) + 1;
@@ -495,7 +497,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className="button-inactive"
         >
           {page}
-        </button>
+        </button>,
       );
     }
   } else {
@@ -507,13 +509,13 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className={currentPage === page ? "button-active" : "button-inactive"}
         >
           {page}
-        </button>
+        </button>,
       );
     }
     pagination.push(
       <p key="ellipsis-start" className="ellipsis">
         ...
-      </p>
+      </p>,
     );
     for (
       let page = totalPages - Math.floor(maxPagesToShow / 2) + 1;
@@ -527,7 +529,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className={currentPage === page ? "button-active" : "button-inactive"}
         >
           {page}
-        </button>
+        </button>,
       );
     }
   }
