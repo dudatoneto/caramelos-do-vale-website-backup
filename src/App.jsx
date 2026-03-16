@@ -82,7 +82,7 @@ const App = () => {
             <Route path="for-adoption" element={<ForAdoption />} />
             <Route path="/for-adoption/:id" element={<PetDetails />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/events" element={<Events />} />
+            {/* <Route path="/events" element={<Events />} /> */}
             <Route path="/volunteering" element={<Volunteering />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

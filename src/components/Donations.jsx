@@ -210,10 +210,15 @@ const Donations = () => {
           </div>
 
           <div className="donation-description">
-            <p>Venha participar de nossos cafés e feiras de adoção!</p>
-
+            <p>
+              Venha participar de nossos cafés, feiras de adoção e muitos outros
+              eventos! Além de conhecer os animais resgatados e apoiar a causa,
+              você pode adquirir produtos incríveis da nossa associação. Todo o
+              valor arrecadado com as vendas é revertido para ajudar no cuidado
+              e tratamento dos nossos peludos.
+            </p>
             <Link
-              to="/events"
+              to="https://docs.google.com/forms/d/e/1FAIpQLSd2H8sZQE5ytRxgycFujwL8XaOm2dwWag1b4_kT7hytksjvcA/viewform?usp=send_form"
               className="link button-primary"
               onClick={() =>
                 ReactGA.event({
@@ -222,7 +227,7 @@ const Donations = () => {
                 })
               }
             >
-              Confira nossa página de eventos
+              Formulário para voluntários
               <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
             </Link>
           </div>
