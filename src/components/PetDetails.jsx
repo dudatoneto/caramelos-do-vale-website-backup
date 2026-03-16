@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,29 +8,30 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { petInfoParsing } from "./ForAdoption";
+import ReactGA from "react-ga4";
 
 const PHONE_NUMBER = "5551991084114";
 
 const fetchPet = async (petId) => {
   const supabaseConnection = createClient(
     import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_KEY
+    import.meta.env.VITE_SUPABASE_KEY,
   );
 
   const { data, error } = await supabaseConnection
     .from("pets_info")
     .select("*")
     .eq("pet_id", petId)
-    .single(); // Ensures only one result is returned as an object instead of an array
+    .single();
 
   if (error) {
     console.error(
       "Error fetching pet " + petId + " from pets_info table",
-      error
+      error,
     );
     return {};
   } else {
-    console.log("Successfuly retrieved pet");
+    console.log("Successfully retrieved pet");
     return data;
   }
 };
@@ -38,7 +39,7 @@ const fetchPet = async (petId) => {
 const fetchPetImages = async (petId) => {
   const supabaseConnection = createClient(
     import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_KEY
+    import.meta.env.VITE_SUPABASE_KEY,
   );
 
   const { data, error } = await supabaseConnection
@@ -47,13 +48,10 @@ const fetchPetImages = async (petId) => {
     .eq("pet_id", petId);
 
   if (error) {
-    console.error(
-      "Error fetching images links for pet " + petId + " from pets_info table",
-      error
-    );
-    return {};
+    console.error("Error fetching images links for pet " + petId, error);
+    return [];
   } else {
-    console.log("Successfuly retrieved images");
+    console.log("Successfully retrieved images");
     return data;
   }
 };
@@ -63,18 +61,59 @@ const PetDetails = () => {
   const [petInfo, setPetInfo] = useState(null);
   const [petImages, setPetImages] = useState([]);
 
+  // fetch data
   useEffect(() => {
     const getPetInfoAndImages = async () => {
       const data = await fetchPet(id);
+
       if (data) {
-        setPetInfo(petInfoParsing(data)); // Apply parsing before setting
+        const parsed = petInfoParsing(data);
+        setPetInfo(parsed);
       }
 
       const images = await fetchPetImages(id);
       setPetImages(images);
     };
+
     getPetInfoAndImages();
-  }, []);
+  }, [id]);
+
+  // evento: visualizou perfil
+  useEffect(() => {
+    if (petInfo) {
+      ReactGA.event({
+        category: "dogs",
+        action: "view_dog_profile",
+        label: petInfo.name,
+      });
+    }
+  }, [petInfo]);
+
+  // evento: carregou galeria
+  useEffect(() => {
+    if (petImages.length && petInfo) {
+      ReactGA.event({
+        category: "dogs",
+        action: "view_pet_gallery",
+        label: petInfo.name,
+      });
+    }
+  }, [petImages, petInfo]);
+
+  // evento: engajamento (30s na página)
+  useEffect(() => {
+    if (!petInfo) return;
+
+    const timer = setTimeout(() => {
+      ReactGA.event({
+        category: "dogs",
+        action: "engaged_pet_profile",
+        label: petInfo.name,
+      });
+    }, 30000);
+
+    return () => clearTimeout(timer);
+  }, [petInfo]);
 
   if (!petInfo) {
     return (
@@ -88,22 +127,27 @@ const PetDetails = () => {
     <main>
       <section>
         <h1>{petInfo.name}</h1>
-        {<img src={petInfo.profile_img} className="img-round pet-img" />}
+        <img src={petInfo.profile_img} className="img-round pet-img" />
       </section>
+
       <section className="pet-info">
         <div className="general-info">
           <p>
             <b>Porte:</b> {petInfo.size}
           </p>
+
           <p>
             <b>Sexo:</b> {petInfo.gender}
           </p>
+
           <p>
             <b>Idade aproximada:</b> {petInfo.age}
           </p>
+
           <p>
             <b>Situação atual:</b>
           </p>
+
           <div>
             <p className="button-primary button-pet-info">
               {petInfo.castrated === "sim" ? (
@@ -113,6 +157,7 @@ const PetDetails = () => {
               )}
               Castrado
             </p>
+
             <p className="button-primary button-pet-info">
               {petInfo.vaccinated === "sim" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
@@ -121,6 +166,7 @@ const PetDetails = () => {
               )}
               Vacinado
             </p>
+
             <p className="button-primary button-pet-info">
               {petInfo.dewormed === "sim" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
@@ -129,6 +175,7 @@ const PetDetails = () => {
               )}
               Vermifugado
             </p>
+
             <p className="button-primary button-pet-info">
               {petInfo.hosted === "sim" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
@@ -137,6 +184,7 @@ const PetDetails = () => {
               )}
               Hospedado
             </p>
+
             <p className="button-primary button-pet-info">
               {!petInfo.need_sponsorship === "não" ? (
                 <FontAwesomeIcon icon={faCheck} className="icon-pet-info" />
@@ -147,12 +195,16 @@ const PetDetails = () => {
             </p>
           </div>
         </div>
+
         <div className="pet-description">
           <p>
             <b>Um pouquinho sobre mim:</b>
           </p>
+
           <br />
+
           <p>{petInfo.description}</p>
+
           <div>
             <a
               className="button-primary button-pet-info"
@@ -161,15 +213,30 @@ const PetDetails = () => {
               href={`https://wa.me/${PHONE_NUMBER}?text=Olá,%20tenho%20interesse%20em%20adotar%20${
                 petInfo.gender === "Fêmea" ? "a" : "o"
               }%20${petInfo.name}`}
+              onClick={() =>
+                ReactGA.event({
+                  category: "adoption",
+                  action: "click_whatsapp",
+                  label: petInfo.name,
+                })
+              }
             >
               Mandar mensagem
               <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
             </a>
+
             <a
               className="button-primary button-pet-info"
               target="_blank"
               rel="noopener noreferrer"
               href="https://apoia.se/caramelosdovale"
+              onClick={() =>
+                ReactGA.event({
+                  category: "donation",
+                  action: "click_sponsorship",
+                  label: petInfo.name,
+                })
+              }
             >
               Seja meu padrinho no APOIA.se
               <FontAwesomeIcon icon={faArrowRight} className="button-icon" />
@@ -177,10 +244,22 @@ const PetDetails = () => {
           </div>
         </div>
       </section>
+
       <section className="pet-cards">
         {petImages.length ? (
           petImages.map((img) => (
-            <img key={img.id} src={img.link} className="pet-photos" />
+            <img
+              key={img.id}
+              src={img.link}
+              className="pet-photos"
+              onClick={() =>
+                ReactGA.event({
+                  category: "dogs",
+                  action: "click_pet_photo",
+                  label: petInfo.name,
+                })
+              }
+            />
           ))
         ) : (
           <p>Não há fotos disponíveis para exibir.</p>

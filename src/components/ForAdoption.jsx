@@ -12,7 +12,7 @@ import {
 const fetchPetsInfo = async () => {
   const supabaseConnection = createClient(
     import.meta.env.VITE_SUPABASE_URL,
-    import.meta.env.VITE_SUPABASE_KEY
+    import.meta.env.VITE_SUPABASE_KEY,
   );
 
   const { data, error } = await supabaseConnection
@@ -97,25 +97,25 @@ const filterPets = (filterState, pets) => {
   return pets.filter((pet) => {
     // Size Filter
     const anySizeSelected = Object.values(filterState.size).some(
-      (selected) => selected
+      (selected) => selected,
     );
     const sizeFilter =
       !anySizeSelected ||
       Object.keys(filterState.size).some(
         (size) =>
           filterState.size[size] &&
-          (pet.size === size || pet.size.includes(size))
+          (pet.size === size || pet.size.includes(size)),
       );
 
     // Gender Filter
     const anyGenderSelected = Object.values(filterState.gender).some(
-      (selected) => selected
+      (selected) => selected,
     );
     const genderFilter = !anyGenderSelected || filterState.gender[pet.gender];
 
     // Age Filter
     const anyAgeSelected = Object.values(filterState.age).some(
-      (selected) => selected
+      (selected) => selected,
     );
     const petAgeCategory = normalizeAgeCategory(pet.age);
     const ageFilter =
@@ -697,7 +697,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className={currentPage === page ? "button-active" : "button-inactive"}
         >
           {page}
-        </button>
+        </button>,
       );
     }
   } else if (
@@ -712,7 +712,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className="button-inactive"
         >
           {page}
-        </button>
+        </button>,
       );
     }
 
@@ -747,7 +747,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
         <p key="ellipsis-end" className="ellipsis">
           ...
         </p>
-      )
+      ),
     );
     for (
       let page = totalPages - Math.floor(maxPagesToShow / 2) + 1;
@@ -761,7 +761,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className="button-inactive"
         >
           {page}
-        </button>
+        </button>,
       );
     }
   } else {
@@ -773,13 +773,13 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className={currentPage === page ? "button-active" : "button-inactive"}
         >
           {page}
-        </button>
+        </button>,
       );
     }
     pagination.push(
       <p key="ellipsis-start" className="ellipsis">
         ...
-      </p>
+      </p>,
     );
     for (
       let page = totalPages - Math.floor(maxPagesToShow / 2) + 1;
@@ -793,7 +793,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           className={currentPage === page ? "button-active" : "button-inactive"}
         >
           {page}
-        </button>
+        </button>,
       );
     }
   }
